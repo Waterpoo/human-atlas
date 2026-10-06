@@ -7,7 +7,7 @@
         "arterial": 639,
         "cardiac": 23,
         "connective": 42,
-        "digestive": 99,
+        "digestive": 108,
         "endocrine": 4,
         "integumentary": 5,
         "lymphatic": 3,
@@ -18,7 +18,7 @@
         "sensory": 39,
         "skeletal": 294,
         "urinary": 6,
-        "venous": 404
+        "venous": 395
       }
     },
     {

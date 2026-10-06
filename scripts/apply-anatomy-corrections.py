@@ -5,6 +5,7 @@ root=Path(__file__).resolve().parents[1]
 def expected_system(part,sex):
  i=part['id'];name=part['name'].lower()
  if sex=='male':
+  if name.startswith('hepatovenous segment'):return 'digestive'
   if i in ['FJ1730','FJ1731','FJ1752','FJ1767','FJ1814','FJ1755','FJ1803']:return 'nervous'
   if i in ['FJ1438','FJ1438M']:return 'muscular'
   if i in ['FJ1423','FJ1423M','FJ1471','FJ1471M']:return 'connective'

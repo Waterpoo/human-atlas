@@ -348,5 +348,68 @@
     "name": "brachiocephalic artery",
     "from": "cardiac",
     "to": "arterial"
+  },
+  {
+    "model": "male",
+    "id": "FJ1858",
+    "name": "Hepatovenous segment IX",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2409",
+    "name": "Hepatovenous segment VII",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2818",
+    "name": "Hepatovenous segment II",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2819",
+    "name": "Hepatovenous segment III",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2820",
+    "name": "Hepatovenous segment IV",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2821",
+    "name": "Hepatovenous segment V",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2822",
+    "name": "Hepatovenous segment VI",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2823",
+    "name": "Hepatovenous segment VIII",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2824",
+    "name": "Hepatovenous segment VIII",
+    "from": "venous",
+    "to": "digestive"
   }
 ]

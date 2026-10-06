@@ -1,0 +1,25 @@
+# Component audit — installer held pending source review
+
+All 3,122 components (2,234 male; 888 female) have an individual record in component-audit.csv. Each record checks its geometry buffers, finite coordinates, valid indices, nonempty normals, containment within stored original bounds, and compressed geometry integrity. These checks establish data integrity, not anatomical certification. Larger original bounds are intentional after geometry simplification.
+
+50 confirmed system assignments were corrected; the full before/after list is system-corrections.json. Brain ventricular spaces and choroid plexuses move to Nervous system; tensor fasciae latae to Muscles; wrist retinacula to Connective tissue; lacrimal bones to Skeleton; gingiva to Digestive/oral structures; papillary muscles to Heart. Female cardiac vessels move to Arteries, palatine tonsils to Lymphatic, optic nerves/tracts to Nervous system, and quadriceps tendons to Connective tissue.
+
+Grouping policy: functional organ membership is retained for specialized eye, respiratory, reproductive and joint components. A ligament inside an eye or uterus is not automatically an error. Intracranial vessels stay in vascular systems; cardiac vessels belong to their vascular layers, while cardiac muscle belongs to Heart. Teeth and joint/costal cartilage are included with the supporting skeleton, so this layer is not a bones-only segmentation.
+
+Outstanding source review blocks anatomical sign-off and an updated installer:
+
+- Female Allen brain hemisphere labels oppose the body left/right convention for many components. The official source GLB has the same baked positions and no node or parent transforms. This is not proven to be an application transform bug. Do not mirror or relabel the brain without resolving the source conventions.
+- VH_F_superior_rectal_vein and VH_F_inferior_mesenteric_vein have vein node names but arterial source labels and arterial ontology IDs (UBERON:0035040 and UBERON:0001182). Geometry identity needs tracing through the vascular tree; neither spelling alone establishes identity.
+- VH_F_left_anterior_descending_artery has a coronary LAD node name but a pulmonary-branch display label in the source. Its identity/ontology needs resolving before renaming.
+- Male FJ1469/FJ1469M flexor pollicis brevis labels oppose their hand coordinates and neighboring named muscle subdivisions; FJ2190's right fibular vein label falls on the left leg. These require original source concept/mesh verification.
+- Midline flags in cardiac and hepatic structures are review candidates, not necessarily errors: anatomical right/left chamber or liver-region membership does not require every vertex to lie on the corresponding side of the body.
+- Female partial coverage and pregnancy reference geometry are dataset limitations. Pregnancy remains a separate reference layer.
+
+Sources reviewed:
+- Brain ventricular anatomy: https://www.ncbi.nlm.nih.gov/books/NBK11083/
+- Tensor fasciae latae: https://www.ncbi.nlm.nih.gov/books/NBK499870/
+- Palatine tonsils: https://www.ncbi.nlm.nih.gov/mesh/D014066
+- Official female source: https://cdn.humanatlas.io/digital-objects/ref-organ/united-female/v1.5/assets/3d-vh-f-united.glb
+- Brain reference provenance: https://3d.nih.gov/entries/3DPX-020959
+
+Run python3 scripts/audit-anatomy.py (requires NumPy) to regenerate the itemized audit. npm test enforces reviewed system corrections. The browser suite also exercises every available system individually in both models and records system screenshots; it checks the complete rendered component inventory and page errors. It is not a substitute for expert anatomical review.

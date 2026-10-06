@@ -34,6 +34,8 @@ jobs:
           name: Viewer-previews
           path: test-results/*-view.png
   mac:
+    # Hold installers while the source anatomy audit has unresolved identity/laterality flags.
+    if: ${{ false }}
     needs: test
     strategy:
       matrix:

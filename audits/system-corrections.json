@@ -1,0 +1,352 @@
+[
+  {
+    "model": "male",
+    "id": "FJ1252",
+    "name": "Gingiva of upper jaw",
+    "from": "skeletal",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ1253",
+    "name": "Gingiva of lower jaw",
+    "from": "skeletal",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ1438",
+    "name": "Right tensor fasciae latae",
+    "from": "connective",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1438M",
+    "name": "Left tensor fasciae latae",
+    "from": "connective",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1471",
+    "name": "Flexor retinaculum of right wrist",
+    "from": "sensory",
+    "to": "connective"
+  },
+  {
+    "model": "male",
+    "id": "FJ1471M",
+    "name": "Flexor retinaculum of left wrist",
+    "from": "sensory",
+    "to": "connective"
+  },
+  {
+    "model": "male",
+    "id": "FJ1730",
+    "name": "Third ventricle",
+    "from": "cardiac",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ1731",
+    "name": "Fourth ventricle",
+    "from": "cardiac",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ1752",
+    "name": "Interventricular foramen",
+    "from": "cardiac",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ1755",
+    "name": "Choroid plexus of cerebral hemisphere",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ1767",
+    "name": "Left lateral ventricle",
+    "from": "cardiac",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ1803",
+    "name": "Choroid plexus of cerebral hemisphere",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ1814",
+    "name": "Right lateral ventricle",
+    "from": "cardiac",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ2418",
+    "name": "Anterolateral head of lateral papillary muscle of left ventricle",
+    "from": "muscular",
+    "to": "cardiac"
+  },
+  {
+    "model": "male",
+    "id": "FJ2419",
+    "name": "Anterior papillary muscle of right ventricle",
+    "from": "muscular",
+    "to": "cardiac"
+  },
+  {
+    "model": "male",
+    "id": "FJ2429",
+    "name": "Lateral papillary muscle of left ventricle",
+    "from": "muscular",
+    "to": "cardiac"
+  },
+  {
+    "model": "male",
+    "id": "FJ2430",
+    "name": "Posterior papillary muscle of right ventricle",
+    "from": "muscular",
+    "to": "cardiac"
+  },
+  {
+    "model": "male",
+    "id": "FJ2437",
+    "name": "Septal papillary muscle of right ventricle",
+    "from": "muscular",
+    "to": "cardiac"
+  },
+  {
+    "model": "male",
+    "id": "FJ3265",
+    "name": "Left lacrimal bone",
+    "from": "sensory",
+    "to": "skeletal"
+  },
+  {
+    "model": "male",
+    "id": "FJ3371",
+    "name": "Right lacrimal bone",
+    "from": "sensory",
+    "to": "skeletal"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_right_optic_nerve",
+    "name": "Right optic nerve",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_optic_nerve",
+    "name": "Left optic nerve",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_optic_tract_L",
+    "name": "optic tract",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_optic_tract_R",
+    "name": "optic tract",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_tendon_of_quadriceps_femoris_L",
+    "name": "Tendon of left quadriceps femoris",
+    "from": "muscular",
+    "to": "connective"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_tendon_of_quadriceps_femoris_R",
+    "name": "Tendon of right quadriceps femoris",
+    "from": "muscular",
+    "to": "connective"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_palatine_tonsil_L",
+    "name": "left palatine tonsil",
+    "from": "digestive",
+    "to": "lymphatic"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_palatine_tonsil_R",
+    "name": "right palatine tonsil",
+    "from": "digestive",
+    "to": "lymphatic"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_anterior_descending_artery",
+    "name": "Anterior descending branch of left pulmonary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_circumflex_artery",
+    "name": "circumflex branch of left coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_diagonal_branch_of_left_anterior_descending_artery",
+    "name": "Diagonal branch of anterior descending branch of left coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_coronary_artery",
+    "name": "left coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_marginal_branch",
+    "name": "Left marginal artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_posterior_descending_branch_of_circumflex_branch_of_left_coronary_artery",
+    "name": "left posterior descending branch of circumflex branch of left coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_posterior_left_ventricular_branch",
+    "name": "Posterior ventricular branch of circumflex coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_right_coronary_artery",
+    "name": "right coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_right_marginal_artery",
+    "name": "marginal branch of right coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_pulmonary_artery_L",
+    "name": "left pulmonary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_pulmonary_trunk",
+    "name": "pulmonary trunk",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_pulmonary_artery_R",
+    "name": "right pulmonary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_aortic_arch",
+    "name": "arch of aorta",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_ascending_aorta",
+    "name": "ascending aorta",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_descending_aorta_a",
+    "name": "descending aorta",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_descending_aorta_b",
+    "name": "descending aorta",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_common_carotid_artery_a",
+    "name": "left common carotid artery plus branches",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_common_carotid_artery_b",
+    "name": "left common carotid artery plus branches",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_subclavian_artery_a",
+    "name": "left subclavian artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_subclavian_artery_b",
+    "name": "left subclavian artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_brachiocephalic_artery_b",
+    "name": "brachiocephalic artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_brachiocephalic_artery_a",
+    "name": "brachiocephalic artery",
+    "from": "cardiac",
+    "to": "arterial"
+  }
+]

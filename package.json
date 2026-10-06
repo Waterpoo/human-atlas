@@ -10,7 +10,7 @@
     "build": "vite build && node scripts/offline-manifest.mjs",
     "build:vercel": "vite build && node scripts/offline-manifest.mjs",
     "check": "tsc --noEmit",
-    "test": "node scripts/validate-atlas.mjs && node scripts/validate-atlas.mjs atlas-female.json && node scripts/validate-interactions.mjs && node tests/study.mjs",
+    "test": "python3 scripts/apply-anatomy-corrections.py --check && node scripts/validate-atlas.mjs && node scripts/validate-atlas.mjs atlas-female.json && node scripts/validate-interactions.mjs && node tests/study.mjs",
     "desktop": "npm run build && electron desktop/main.cjs",
     "package:mac": "npm run build && electron-builder --mac"
   },

@@ -108,3 +108,18 @@ test('Female model, clear selections, stage-free camera pan, and both models off
  await page.getByRole('button',{name:'Reset view and layers'}).click();await expect(muscles).toHaveValue('100');await expect(separation).toHaveValue('0');
  await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'Open system layers'}).click();await expect(muscles).toBeVisible();await muscles.focus();await muscles.press('Home');for(let i=0;i<40;i++)await muscles.press('ArrowRight');await expect(muscles).toHaveValue('40');
  });
+
+ test('Every available system renders its complete component inventory in both models',async({page})=>{
+ test.setTimeout(360000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');
+ for(const sex of ['male','female']){
+ await page.getByLabel('Reference model',{exact:true}).selectOption(sex);await expect(page.getByText('Preparing the anatomy')).toBeHidden({timeout:90000});
+ const atlas=await (await page.request.get(sex==='male'?'/models/atlas.json':'/models/atlas-female.json')).json();
+ for(const [id,name] of Object.entries({skeletal:'Skeleton',muscular:'Muscles',cardiac:'Heart',sensory:'Sensory organs',arterial:'Arteries',venous:'Veins',nervous:'Nervous system',respiratory:'Respiratory',digestive:'Digestive',urinary:'Urinary',lymphatic:'Lymphatic',endocrine:'Endocrine',reproductive:'Reproductive',integumentary:'Body surface',pregnancy:'Pregnancy reference',connective:'Connective tissue'})){
+ const expected=atlas.parts.filter((p:{system:string})=>p.system===id).length;if(!expected)continue;
+ await page.locator('.system-name').filter({hasText:name}).click();
+ await expect.poll(async()=>JSON.parse((await page.locator('canvas').getAttribute('data-visible-system-counts'))??'{}')).toEqual(Object.fromEntries(Object.keys({skeletal:1,muscular:1,cardiac:1,sensory:1,arterial:1,venous:1,nervous:1,respiratory:1,digestive:1,urinary:1,lymphatic:1,endocrine:1,reproductive:1,integumentary:1,pregnancy:1,connective:1}).map(s=>[s,s===id?expected:0])));
+ await expect(page.getByRole('alert')).toHaveCount(0);await page.screenshot({path:`test-results/${sex}-${id}-view.png`});
+ }
+ }
+ expect(errors).toEqual([]);
+ });

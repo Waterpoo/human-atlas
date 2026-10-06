@@ -1,5 +1,6 @@
-import {readdir,writeFile,readFile} from 'node:fs/promises';
+import {readdir,writeFile,readFile,copyFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+await copyFile('LICENSE','dist/LICENSE.txt');
 const files=[];
 async function walk(dir,prefix=''){for(const e of await readdir(dir,{withFileTypes:true})){const p=prefix+'/'+e.name;if(e.isDirectory())await walk(dir+'/'+e.name,p);else if(!p.endsWith('.bin')&&!['/sw.js','/offline-manifest.json'].includes(p))files.push(p);}}
 await walk('dist');

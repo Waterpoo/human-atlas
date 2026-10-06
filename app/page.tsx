@@ -34,7 +34,7 @@ export default function Home(){
  const openPanel=(next:'layers'|'search')=>{setDetails(false);setPanel(p=>p===next?null:next);};
  return <main className="studio">
   <OfflineStatus/>
-  <StudyPanel atlas={atlas} selected={chosen} onChoose={choose}/>
+  <StudyPanel atlas={atlas} selected={chosen} onChoose={c=>{choose(c);setDetails(false);}}/>
   {atlas&&<AnatomyScene atlas={atlas} state={{...state,inspectorOpen:details&&selectedParts.length>0}} onSelect={choosePart} onProgress={n=>{setProgress(n);if(n===100)setError('');}} onError={setError}/>}
   <div className="vignette"/>
   <header className="identity"><div className="eyebrow"><span className="status-dot"/> INTERACTIVE ANATOMY</div><h1>Halo Anatomy<Badge variant="outline" className="edition">3D</Badge></h1><div className="identity-meta">{atlas?atlas.parts.length.toLocaleString():'2,234'} modeled pieces <span>·</span> BodyParts3D</div></header>

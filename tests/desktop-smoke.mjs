@@ -8,6 +8,7 @@ try{
  await page.route('**/*',route=>{const url=new URL(route.request().url());return url.hostname==='127.0.0.1'?route.continue():route.abort();});
  await page.waitForSelector('canvas');
  await page.getByText('Preparing the anatomy').waitFor({state:'hidden',timeout:90000});
+ assert.equal(await page.getByRole('alert').count(),0,'Bundled geometry must load without errors');
  await page.getByRole('button',{name:'RMT Study',exact:true}).click();
  await page.getByRole('region',{name:'RMT study'}).getByRole('heading',{name:'Trapezius'}).waitFor();
  assert.equal(await app.evaluate(({BrowserWindow})=>BrowserWindow.getAllWindows()[0].webContents.getLastWebPreferences().nodeIntegration),false);

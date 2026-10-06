@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect,useState} from 'react';
 import {RMT_STUDY,rmtStudyFor} from './rmt-study';
 import type {Atlas,Concept} from './anatomy';
 const fields=['origin','insertion','action','innervation'] as const;
@@ -7,8 +7,8 @@ export default function StudyPanel({atlas,selected,onChoose}:{atlas:Atlas|null;s
  const [open,setOpen]=useState(false),[mode,setMode]=useState('reference'),[region,setRegion]=useState('All'),[index,setIndex]=useState(0),[field,setField]=useState(0),[answer,setAnswer]=useState(false),[favorites,setFavorites]=useState<string[]>(()=>read('halo-favorites',[])),[notes,setNotes]=useState<Record<string,string>>(()=>read('halo-notes',{})),[score,setScore]=useState(()=>read('halo-score',{correct:0,total:0})),[warning,setWarning]=useState('');
  const save=(key:string,value:unknown)=>{try{localStorage.setItem(key,JSON.stringify(value));}catch{setWarning('Storage is unavailable. Export your study backup before closing.');}};
  const list=RMT_STUDY.filter(e=>(region==='All'||e.region===region)&&(mode!=='favorites'||favorites.includes(e.name)));
- const selectedEntry=rmtStudyFor(selected?.name);
- const entry=(mode==='reference'&&selectedEntry&&list.includes(selectedEntry)?selectedEntry:undefined)??list[index%Math.max(1,list.length)];
+ useEffect(()=>{const match=rmtStudyFor(selected?.name);const i=list.findIndex(e=>e===match);if(mode==='reference'&&i>=0)setIndex(i);},[selected]);
+ const entry=list[index%Math.max(1,list.length)];
  const next=(correct:boolean)=>{const s={correct:score.correct+Number(correct),total:score.total+1};setScore(s);save('halo-score',s);setIndex(i=>i+1);setField(f=>(f+1)%4);setAnswer(false);};
  const locate=(name:string)=>{const candidates=atlas?.concepts.filter(c=>rmtStudyFor(c.name)?.name===name)??[];const c=candidates.find(c=>c.name.toLowerCase()===name.toLowerCase())??(candidates.length?{id:'rmt-'+name,name,elements:[...new Set(candidates.flatMap(c=>c.elements))]}:undefined);if(c)onChoose(c);else setWarning('This muscle has no matching structure in the reference geometry.');};
  const backup=()=>{const blob=new Blob([JSON.stringify({version:1,favorites,notes,score},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='halo-anatomy-study.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};

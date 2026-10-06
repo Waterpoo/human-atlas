@@ -98,3 +98,5 @@ button.study-toggle{background:#ffffffeb;color:#263b48;border:1px solid #25384a1
  .view-controls button{width:38px;height:40px;min-height:40px}.view-controls i{width:28px;height:1px;min-height:1px;margin:4px 5px}
  .study-toggle{top:164px;right:12px}.model-scope{max-width:200px}
 }
+
+.opacity-help,.separation-help{font-size:10px;line-height:1.4;color:#687786;margin:7px 0}.system-layer{border-bottom:1px solid #1825360c;padding-bottom:5px}.opacity-control{display:flex;align-items:center;gap:8px;font-size:10px;color:#687786}.opacity-control input{width:100%;min-width:0;flex:1}.opacity-control output{min-width:32px;text-align:right}.opacity-control input,.explode-control input[type=range]{accent-color:#458a85;cursor:pointer;touch-action:none;height:24px}.explode-control input[type=range]{width:100%;display:block;margin:0}.separation-number{width:55px;margin-left:auto;border:1px solid #18253625;border-radius:5px;padding:3px;background:#f4f6f7;text-align:right}.explode-label{gap:5px;margin-bottom:2px}.opacity-help{flex-shrink:0}.system-list{min-height:0}

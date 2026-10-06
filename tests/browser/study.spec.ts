@@ -91,3 +91,20 @@ test('Female model, clear selections, stage-free camera pan, and both models off
  await page.screenshot({path:'test-results/mobile-view.png'});
  expect(errors).toEqual([]);
 });
+
+ test('System opacity and editable structure separation persist',async({page})=>{
+ await page.goto('/');await expect(page.getByText('Preparing the anatomy')).toBeHidden({timeout:90000});
+ const muscles=page.getByRole('slider',{name:'Muscles opacity',exact:true});
+ await muscles.focus();await muscles.press('Home');for(let i=0;i<25;i++)await muscles.press('ArrowRight');await expect(muscles).toHaveValue('25');
+ await expect.poll(async()=>JSON.parse((await page.locator('canvas').getAttribute('data-system-opacity'))??'{}').muscular).toBe(.25);
+ const skeleton=page.getByRole('slider',{name:'Skeleton opacity',exact:true});await expect(skeleton).toHaveValue('100');
+ await muscles.press('Home');await expect(page.getByRole('switch',{name:'Show muscles',exact:true})).not.toBeChecked();
+ await page.getByRole('switch',{name:'Show muscles',exact:true}).click();await expect(muscles).toHaveValue('100');await muscles.focus();await muscles.press('Home');for(let i=0;i<25;i++)await muscles.press('ArrowRight');
+ const separation=page.getByRole('slider',{name:'Structure separation',exact:true});await separation.focus();await separation.press('Home');for(let i=0;i<30;i++)await separation.press('ArrowRight');
+ await expect(page.getByRole('spinbutton',{name:'Separation percentage'})).toHaveValue('30');
+ await page.getByRole('spinbutton',{name:'Separation percentage'}).fill('45');await expect(separation).toHaveValue('45');
+ await page.reload();await expect(page.getByText('Preparing the anatomy')).toBeHidden({timeout:90000});
+ await expect(muscles).toHaveValue('25');await expect(separation).toHaveValue('45');
+ await page.getByRole('button',{name:'Reset view and layers'}).click();await expect(muscles).toHaveValue('100');await expect(separation).toHaveValue('0');
+ await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'Open system layers'}).click();await expect(muscles).toBeVisible();await muscles.focus();await muscles.press('Home');for(let i=0;i<40;i++)await muscles.press('ArrowRight');await expect(muscles).toHaveValue('40');
+ });

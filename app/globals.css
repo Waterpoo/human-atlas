@@ -93,3 +93,8 @@ button.study-toggle{background:#ffffffeb;color:#263b48;border:1px solid #25384a1
 .anatomy-choice{display:flex;align-items:center;gap:8px;font-size:11px;pointer-events:auto;margin-top:26px}.anatomy-choice select{min-height:40px;max-width:190px;background:#fffffff0;border:1px solid #b9c3cc;border-radius:8px;padding:6px 9px;color:#263b48;font-size:12px}.model-scope{font-size:10px;color:#68727d;margin-top:4px}.layers-panel{top:223px}.view-controls{max-height:calc(100dvh - 200px);overflow:auto}.view-controls button{flex-shrink:0}
 @media(max-width:767px){.anatomy-choice{margin-top:24px}.anatomy-choice select{max-width:174px}.model-scope{font-size:9px}.view-controls{top:196px;flex-wrap:wrap;max-width:350px;max-height:none;overflow:visible}.view-controls button{width:40px;height:40px}.view-controls i{margin:6px 2px}.study-panel{top:154px}.study-toggle{top:104px}.search-panel{top:160px}}
 @media(max-height:600px) and (orientation:landscape){.anatomy-choice{margin-top:16px}.model-scope{display:none}.view-controls{top:76px;max-width:440px;max-height:none;flex-wrap:wrap;overflow:visible}.layers-panel.mobile-open{top:132px}}
+@media(max-width:767px) and (orientation:portrait){
+ .view-controls{top:220px;left:auto;right:12px;width:48px;max-width:48px;max-height:calc(100dvh - 365px);margin:0;transform:none;flex-direction:column;flex-wrap:nowrap;justify-content:flex-start;overflow-y:auto;overflow-x:hidden;padding:4px;scrollbar-width:thin}
+ .view-controls button{width:38px;height:40px;min-height:40px}.view-controls i{width:28px;height:1px;min-height:1px;margin:4px 5px}
+ .study-toggle{top:164px;right:12px}.model-scope{max-width:200px}
+}

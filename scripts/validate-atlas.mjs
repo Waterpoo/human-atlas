@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 const filename=process.argv[2]??'atlas.json';
 const base=new URL('../public/models/',import.meta.url),atlas=JSON.parse(fs.readFileSync(new URL(filename,base)));
 const female=filename==='atlas-female.json';assert.equal(atlas.parts.length,female?888:2234);assert.equal(atlas.concepts.length,female?1073:3432);
+if(!female){for(const id of ['FJ1423','FJ1423M'])assert.equal(atlas.parts.find(p=>p.id===id)?.system,'connective',`${id}: iliotibial fascia must not appear in Skeleton`);}
 const ids=new Set(atlas.parts.map(p=>p.id));assert.equal(ids.size,atlas.parts.length);
 const files=atlas.chunks.map(c=>{const b=fs.readFileSync(new URL(c.url.split('/').pop(),base));assert.equal(b.length,c.bytes);return b;});
 let tris=0;

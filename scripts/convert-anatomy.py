@@ -37,6 +37,8 @@ for element in metadata['elements']:
     bounds=[[min(vertices[i::3]) for i in range(3)],[max(vertices[i::3]) for i in range(3)]]
     system=systems.get(element['id'],'connective')
     if isinstance(system,dict):system=system.get('system',system.get('category','connective'))
+    # The IT bands are fascia, not bones, regardless of the source system map.
+    if element['id'] in ('FJ1423','FJ1423M'):system='connective'
     parts.append({'id':element['id'],'name':record.get('name',name),'conceptId':record.get('conceptId',element['conceptId']),'system':system,'chunk':chunk,'positions':po,'normals':no,'indices':io,'vertexCount':len(vertices)//3,'indexCount':len(indices),'bounds':bounds})
     total_triangles+=len(indices)//3
 (out/f'anatomy-{chunk}.bin').write_bytes(blob);chunks.append({'url':f'/models/anatomy-{chunk}.bin','bytes':len(blob)})

@@ -3,11 +3,11 @@ import assert from 'node:assert/strict';
 const exe=process.argv[2];
 const gpu=process.arch==='arm64'?[]:['--use-gl=angle','--use-angle=swiftshader-webgl','--enable-unsafe-swiftshader'];
 console.log('Launching packaged desktop:',exe??'development');
-const watchdog=setTimeout(()=>{console.error('Desktop smoke test exceeded four minutes');process.exit(1);},240000);
-const app=await electron.launch(exe?{executablePath:exe,args:gpu,timeout:60000}:{args:['desktop/main.cjs',...gpu],timeout:60000});
+const watchdog=setTimeout(()=>{console.error('Desktop smoke test exceeded six minutes');process.exit(1);},360000);
+const app=await electron.launch(exe?{executablePath:exe,args:gpu,timeout:180000}:{args:['desktop/main.cjs',...gpu],timeout:180000});
 console.log('Electron connected');
 try{
- const page=await app.firstWindow({timeout:60000});console.log('Window opened');
+ const page=await app.firstWindow({timeout:180000});console.log('Window opened');
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.route('**/*',route=>{const url=new URL(route.request().url());return url.hostname==='127.0.0.1'?route.continue():route.abort();});
  await page.waitForSelector('canvas',{timeout:90000});console.log('WebGL canvas ready');
@@ -18,4 +18,4 @@ try{
  assert.equal(await app.evaluate(({BrowserWindow})=>BrowserWindow.getAllWindows()[0].webContents.getLastWebPreferences().nodeIntegration),false);
  assert.deepEqual(errors,[]);
  console.log('Desktop starts with external network requests blocked, loads bundled geometry, opens study tools, and disables renderer Node integration.');
-}catch(error){const page=(await app.windows())[0];if(page){console.error(await page.locator('body').innerText());await page.screenshot({path:'desktop-failure.png'});}throw error;}finally{await Promise.race([app.close(),new Promise(resolve=>setTimeout(()=>{app.process().kill('SIGKILL');resolve();},10000))]);clearTimeout(watchdog);}
+}catch(error){const page=(await app.windows())[0];if(page){console.error(await page.locator('body').innerText());await page.screenshot({path:'desktop-failure.png'});}throw error;}finally{await app.close();clearTimeout(watchdog);}

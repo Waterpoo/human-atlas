@@ -1,7 +1,7 @@
 import {_electron as electron} from '@playwright/test';
 import assert from 'node:assert/strict';
 const exe=process.argv[2];
-const gpu=['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'];
+const gpu=process.arch==='arm64'?[]:['--use-gl=angle','--use-angle=swiftshader-webgl','--enable-unsafe-swiftshader'];
 const app=await electron.launch(exe?{executablePath:exe,args:gpu}:{args:['desktop/main.cjs',...gpu]});
 try{
  const page=await app.firstWindow();

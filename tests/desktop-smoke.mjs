@@ -14,9 +14,11 @@ try{
  await page.getByText('Preparing the anatomy').waitFor({state:'hidden',timeout:90000});
  assert.equal(await page.getByRole('alert').count(),0,'Bundled geometry must load without errors');
  await page.getByLabel('Reference model',{exact:true}).selectOption('female');
+ await page.getByText('888 modeled pieces',{exact:false}).waitFor({timeout:90000});
  await page.getByText('Preparing the anatomy').waitFor({state:'hidden',timeout:90000});
  assert.equal(await page.getByRole('alert').count(),0,'Female bundled geometry must load offline');
  await page.getByLabel('Reference model',{exact:true}).selectOption('male');
+ await page.getByText('2,234 modeled pieces',{exact:false}).waitFor({timeout:90000});
  await page.getByText('Preparing the anatomy').waitFor({state:'hidden',timeout:90000});
  await page.getByRole('button',{name:'Move camera up',exact:true}).click();
  await page.getByRole('button',{name:'RMT Study',exact:true}).click();

@@ -88,5 +88,6 @@ test('Female model, clear selections, stage-free camera pan, and both models off
  await page.setViewportSize({width:390,height:844});
  await expect(page.getByLabel('Reference model',{exact:true})).toBeVisible();
  await expect(page.getByRole('button',{name:'Move camera up',exact:true})).toBeVisible();
+ await page.screenshot({path:'test-results/mobile-view.png'});
  expect(errors).toEqual([]);
 });

@@ -17,7 +17,7 @@ app.whenReady().then(()=>{
   const win=new BrowserWindow({width:1400,height:950,title:'Halo Anatomy',webPreferences:{nodeIntegration:false,contextIsolation:true,sandbox:true}});
   win.webContents.setWindowOpenHandler(({url})=>{if(/^https:\/\//.test(url))shell.openExternal(url);return {action:'deny'};});
   win.webContents.on('will-navigate',(e,url)=>{if(new URL(url).origin!==origin)e.preventDefault();});
-  win.loadURL(origin);
+  win.loadURL(origin+'/?desktop=1');
  }).on('error',error=>{dialog.showErrorBox('Halo Anatomy could not start',`The local viewer could not start: ${error.message}. Close any application using port 3017 and try again.`);app.quit();});
 });
 app.on('window-all-closed',()=>app.quit());

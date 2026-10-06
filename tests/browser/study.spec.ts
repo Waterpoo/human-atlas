@@ -1,0 +1,22 @@
+import {test,expect} from '@playwright/test';
+test('Study, saved notes, quiz, 3D matching, and complete offline reload',async({page,context})=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('/');await expect(page.getByText('Preparing the anatomy')).toBeHidden({timeout:60000});
+ await page.getByRole('button',{name:'RMT Study',exact:true}).click();
+ const study=page.getByRole('region',{name:'RMT study'});
+ await expect(study.getByRole('heading',{name:'Trapezius',exact:true})).toBeVisible();
+ await study.getByRole('button',{name:'Show in 3D'}).click();
+ await expect(page.getByRole('heading',{name:'Trapezius',exact:true}).last()).toBeVisible();
+ await study.getByRole('button',{name:'Save favorite'}).click();
+ await study.getByRole('textbox',{name:'My study notes'}).fill('Review scapular upward rotation.');
+ await study.getByRole('button',{name:'quiz',exact:true}).click();await study.getByRole('button',{name:'Reveal answer'}).click();await study.getByRole('button',{name:'I knew it'}).click();
+ await expect(study.getByText('1 / 1 recalled',{exact:false})).toBeVisible();
+ await page.evaluate(async()=>{await navigator.serviceWorker.ready;});
+ await context.setOffline(true);await page.reload();
+ await expect(page.getByText('Preparing the anatomy')).toBeHidden({timeout:60000});
+ await page.getByRole('button',{name:'RMT Study',exact:true}).click();
+ await expect(study.getByRole('textbox',{name:'My study notes'})).toHaveValue('Review scapular upward rotation.');
+ await study.getByRole('button',{name:'favorites',exact:true}).click();await expect(study.getByRole('heading',{name:'Trapezius'})).toBeVisible();
+ await page.setViewportSize({width:390,height:844});await expect(study).toBeVisible();
+ expect(errors).toEqual([]);
+});

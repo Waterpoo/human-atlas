@@ -1,0 +1,51 @@
+name: Test and package Halo Anatomy
+on:
+  pull_request:
+  push:
+    branches: [main, feature/rmt-offline-study]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run check && npm test && npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Halo-Anatomy-Offline-Web
+          path: dist
+  mac:
+    needs: test
+    strategy:
+      matrix:
+        include:
+          - runner: macos-14
+            arch: arm64
+          - runner: macos-15-intel
+            arch: x64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run package:mac -- --${{ matrix.arch }}
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Halo-Anatomy-Mac-${{ matrix.arch }}
+          path: |
+            release/*.dmg
+            release/*.zip

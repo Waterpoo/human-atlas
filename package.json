@@ -1,15 +1,18 @@
 {
-  "name": "anatomy-studio",
-  "version": "0.1.0",
+  "name": "halo-anatomy",
+  "version": "1.0.0",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
   },
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3016",
-    "build": "vite build",
-    "build:vercel": "vite build",
-    "check": "tsc --noEmit"
+    "build": "vite build && node scripts/offline-manifest.mjs",
+    "build:vercel": "vite build && node scripts/offline-manifest.mjs",
+    "check": "tsc --noEmit",
+    "test": "node scripts/validate-atlas.mjs && node scripts/validate-interactions.mjs && node tests/study.mjs",
+    "desktop": "npm run build && electron desktop/main.cjs",
+    "package:mac": "npm run build && electron-builder --mac"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",
@@ -38,12 +41,15 @@
     "@cloudflare/vite-plugin": "1.37.1",
     "@cloudflare/workers-types": "4.20260515.1",
     "@openai/sites-vite-plugin": "0.2.0",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "4.2.1",
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.2",
     "@vitejs/plugin-rsc": "0.5.26",
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3",
     "meshoptimizer": "^1.2.0",
     "oxfmt": "0.61.0",
     "oxlint": "1.76.0",
@@ -54,5 +60,26 @@
     "wrangler": "4.92.0"
   },
   "type": "module",
-  "license": "MIT"
+  "license": "MIT",
+  "build": {
+    "appId": "care.halolife.anatomy",
+    "productName": "Halo Anatomy",
+    "files": [
+      "dist/**/*",
+      "desktop/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.education"
+    },
+    "asar": true
+  },
+  "main": "desktop/main.cjs"
 }

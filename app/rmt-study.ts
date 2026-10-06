@@ -19,4 +19,9 @@ export const RMT_STUDY:RmtStudyEntry[]=[
 {name:'Gastrocnemius',region:'Leg',origin:'Posterior femoral condyles',insertion:'Posterior calcaneus via calcaneal tendon',action:'Plantarflexes ankle and assists knee flexion',innervation:'Tibial nerve (S1–S2)'},
 {name:'Soleus',region:'Leg',origin:'Posterior fibular head/proximal fibula and soleal line of tibia',insertion:'Posterior calcaneus via calcaneal tendon',action:'Plantarflexes ankle; important postural muscle',innervation:'Tibial nerve (S1–S2)'}
 ];
-export function rmtStudyFor(name?:string){if(!name)return undefined;const n=name.toLowerCase();return RMT_STUDY.find(x=>n===x.name.toLowerCase()||n.includes(x.name.toLowerCase())||x.name.toLowerCase().includes(n));}
+export function rmtStudyFor(name?:string){
+ if(!name)return undefined;
+ const n=name.toLowerCase().replace(/\b(left|right|muscle)\b/g,'').replace(/\s+/g,' ').trim();
+ if(!n)return undefined;
+ return RMT_STUDY.find(x=>n===x.name.toLowerCase()||n.endsWith(' of '+x.name.toLowerCase()) && !n.startsWith('zone of '));
+}

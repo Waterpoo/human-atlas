@@ -4,7 +4,7 @@ import '../app/globals.css';
 
 createRoot(document.getElementById('root')!).render(<Home/>);
 
-if ('serviceWorker' in navigator) {
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').catch(error => console.warn('Offline mode unavailable:', error));
   });

@@ -1,4 +1,4 @@
-# Halo Anatomy 1.0 — Offline RMT Study Atlas
+# Halo Anatomy 1.1 — Offline RMT Study Atlas
 
 ## Desktop app
 
@@ -12,7 +12,13 @@ For a developer build: `npm ci`, then `npm run desktop`. To package on a Mac: `n
 
 Run `npm ci`, `npm run build`, then `npx vite preview --host 127.0.0.1 --port 3016`. Open http://127.0.0.1:3016. Keep the complete `dist` directory for first-run offline use with a local server.
 
-When used from HTTPS or localhost, the production service worker saves **all 15 compressed geometry chunks**, the catalogue, JavaScript, CSS, attribution, and application shell before activating. Wait for “All anatomy saved for offline use” before disconnecting. If storage is full or caching is interrupted, the worker does not report readiness. Development mode intentionally does not register a worker. Browser storage may be cleared or evicted; export notes periodically. Opening index.html directly through file:// is not supported.
+When used from HTTPS or localhost, the production service worker saves **all 25 compressed geometry chunks for both models**, the catalogue, JavaScript, CSS, attribution, and application shell before activating. Wait for “All anatomy saved for offline use” before disconnecting. If storage is full or caching is interrupted, the worker does not report readiness. Development mode intentionally does not register a worker. Browser storage may be cleared or evicted; export notes periodically. Opening index.html directly through file:// is not supported.
+
+## Model and camera controls
+
+Select Male or Female using Reference model. The female HRA assembly contains 888 meshes and 1,073 concepts, including female reproductive anatomy; its skeleton and muscle coverage is partial. Pregnancy reference structures are hidden by default. Muscle summaries remain available, and missing 3D links are explicitly shown for the selected dataset. Model choice is saved locally.
+
+The stage, floor and rings are removed. Use the camera up/down buttons to shift the camera vertically, or enable Pan camera and drag to move vertically or sideways. Right-drag or Shift-drag pans in orbit mode; two-finger gestures pan and zoom. Reset restores the centered orbit view.
 
 ## Study tools
 
@@ -21,7 +27,7 @@ When used from HTTPS or localhost, the production service worker saves **all 15 
 - RMT Study offers region filtering, muscle selection, 3D muscle location, favorites, notes, and self-assessed recall quizzes.
 - Notes, favorites, quiz totals, layers, camera preset, and explosion amount are saved locally.
 - Export/import JSON backups for your notes and progress. Import replaces study data after validation.
-- The latissimus dorsi summary has no matching mesh in this reference dataset. Other muscle summaries may highlight a union of modeled heads or subdivisions. Model coverage is not a claim of complete anatomy.
+- The latissimus dorsi summary has no matching male mesh; the female model lacks most of these muscle meshes. Other muscle summaries may highlight a union of modeled heads or subdivisions. Model coverage is not a claim of complete anatomy.
 
 The study layer is a concise learning aid. Root values and attachment conventions can differ between texts; use your RMT course reference for examination detail. No clinical recommendations are included.
 

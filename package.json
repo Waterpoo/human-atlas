@@ -1,6 +1,6 @@
 {
   "name": "halo-anatomy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -10,7 +10,7 @@
     "build": "vite build && node scripts/offline-manifest.mjs",
     "build:vercel": "vite build && node scripts/offline-manifest.mjs",
     "check": "tsc --noEmit",
-    "test": "node scripts/validate-atlas.mjs && node scripts/validate-interactions.mjs && node tests/study.mjs",
+    "test": "node scripts/validate-atlas.mjs && node scripts/validate-atlas.mjs atlas-female.json && node scripts/validate-interactions.mjs && node tests/study.mjs",
     "desktop": "npm run build && electron desktop/main.cjs",
     "package:mac": "npm run build && electron-builder --mac"
   },

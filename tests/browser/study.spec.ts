@@ -6,6 +6,10 @@ test('Study, saved notes, quiz, 3D matching, and complete offline reload',async(
  const study=page.getByRole('region',{name:'RMT study'});
  await expect(study.getByRole('heading',{name:'Trapezius',exact:true})).toBeVisible();
  await study.getByRole('button',{name:'Show in 3D'}).click();
+ await study.getByLabel('Region',{exact:true}).selectOption('Leg');
+ await expect(study.getByRole('heading',{name:'Gastrocnemius',exact:true})).toBeVisible();
+ await study.getByLabel('Region',{exact:true}).selectOption('All');
+ await study.getByLabel('Muscle',{exact:true}).selectOption('Trapezius');
  await expect(page.getByRole('heading',{name:'Trapezius',exact:true}).last()).toBeVisible();
  await study.getByRole('button',{name:'Save favorite'}).click();
  await study.getByRole('textbox',{name:'My study notes'}).fill('Review scapular upward rotation.');

@@ -35,7 +35,7 @@ jobs:
         include:
           - runner: macos-14
             arch: arm64
-          - runner: macos-15-intel
+          - runner: macos-14
             arch: x64
     runs-on: ${{ matrix.runner }}
     steps:
@@ -44,6 +44,9 @@ jobs:
         with:
           node-version: 24
           cache: npm
+      # Cross-build Intel and test through Rosetta on the GPU-capable ARM runner.
+      - if: matrix.arch == 'x64'
+        run: /usr/bin/arch -x86_64 /usr/bin/true
       - run: npm ci
       - run: npm run package:mac -- --${{ matrix.arch }}
         env:

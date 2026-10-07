@@ -104,3 +104,5 @@ button.study-toggle{background:#ffffffeb;color:#263b48;border:1px solid #25384a1
 .appearance-sheet{gap:20px;overflow:auto}.appearance-sheet label{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.appearance-sheet input[type=color]{height:42px;width:70px;padding:3px;border:1px solid #b9c3cc;border-radius:8px}.appearance-sheet input[type=range]{width:100%;accent-color:#458a85}.background-presets{display:flex;gap:6px;flex-wrap:wrap}.appearance-sheet p{font-size:12px;color:#687786}.dark-canvas .identity h1,.dark-canvas .identity .eyebrow,.dark-canvas .identity-meta,.dark-canvas .model-scope,.dark-canvas .scene-caption,.dark-canvas .studio-footer{color:#f3f6f8}.dark-canvas .studio-footer>button{background:#ffffffeb;color:#263b48}.latin-name{font-style:italic;color:#537a89}.dark-canvas .offline-status{color:#edf1f5}
 
 .source-warning{padding:10px;border:1px solid #ba8539;border-radius:8px;background:#fff5df;color:#755116;font-size:12px;line-height:1.5}
+
+.dark-canvas .anatomy-choice{color:#f3f6f8}.dark-canvas h1 .edition{color:#d3dce1;border-color:#d3dce15a}

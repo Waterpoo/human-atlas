@@ -411,5 +411,103 @@
     "name": "Hepatovenous segment VIII",
     "from": "venous",
     "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ1409",
+    "name": "Right fibularis brevis",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1409M",
+    "name": "Left fibularis brevis",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1410",
+    "name": "Right fibularis longus",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1410M",
+    "name": "Left fibularis longus",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1411",
+    "name": "Right fibularis tertius",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1411M",
+    "name": "Left fibularis tertius",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1439",
+    "name": "Right tibialis anterior",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1439M",
+    "name": "Left tibialis anterior",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1440",
+    "name": "Right tibialis posterior",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1440M",
+    "name": "Left tibialis posterior",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1504",
+    "name": "Right subscapularis",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1504M",
+    "name": "Left subscapularis",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1532",
+    "name": "Right levator scapulae",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1532M",
+    "name": "Left levator scapulae",
+    "from": "skeletal",
+    "to": "muscular"
   }
 ]

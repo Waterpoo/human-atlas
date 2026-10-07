@@ -3,6 +3,7 @@ Run: python3 scripts/convert-female.py SOURCE.glb SOURCE_PARTS.json
 The source has baked, aligned Y-up meter coordinates; only translate to the stage.
 """
 import json,sys,struct,math,re
+from anatomy_system_rules import expected_system
 from pathlib import Path
 from array import array
 source=Path(sys.argv[1]).read_bytes();jl=struct.unpack_from('<I',source,12)[0];doc=json.loads(source[20:20+jl]);binstart=20+jl+8;binary=memoryview(source)[binstart:]
@@ -43,6 +44,7 @@ for ni,node in enumerate(doc['nodes']):
  if len(blob)>6_000_000:flush()
  bounds=[[min(positions[i::3]) for i in range(3)],[max(positions[i::3]) for i in range(3)]]
  part={'id':r['id'],'name':name,'conceptId':r['ontologyId'] if r.get('ontologyId') not in [None,'','-','None','NA'] else 'HRA:'+r['id'],'system':system,'chunk':len(chunks),'positions':append(positions),'normals':append(normals),'indices':append(indices),'vertexCount':len(positions)//3,'indexCount':len(indices),'bounds':bounds}
+ part['system']=expected_system(part,'female')
  parts.append(part);nodeparts[ni]=part['id'];triangles+=len(indices)//3
 flush()
 def descendants(i):

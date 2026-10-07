@@ -114,6 +114,9 @@ test('Female model, clear selections, stage-free camera pan, and both models off
  for(const sex of ['male','female']){
  await page.getByLabel('Reference model',{exact:true}).selectOption(sex);await expect(page.getByText('Preparing the anatomy')).toBeHidden({timeout:90000});
  const atlas=await (await page.request.get(sex==='male'?'/models/atlas.json':'/models/atlas-female.json')).json();
+ if(sex==='male'){
+ for(const baseId of ['FJ1409','FJ1410','FJ1411','FJ1439','FJ1440','FJ1504','FJ1532'])for(const suffix of ['', 'M'])expect(atlas.parts.find((p:{id:string})=>p.id===baseId+suffix)?.system).toBe('muscular');
+ }
  for(const [id,name] of Object.entries({skeletal:'Skeleton',muscular:'Muscles',cardiac:'Heart',sensory:'Sensory organs',arterial:'Arteries',venous:'Veins',nervous:'Nervous system',respiratory:'Respiratory',digestive:'Digestive',urinary:'Urinary',lymphatic:'Lymphatic',endocrine:'Endocrine',reproductive:'Reproductive',integumentary:'Body surface',pregnancy:'Pregnancy reference',connective:'Connective tissue'})){
  const expected=atlas.parts.filter((p:{system:string})=>p.system===id).length;if(!expected)continue;
  await page.locator('.system-name').filter({hasText:name}).click();

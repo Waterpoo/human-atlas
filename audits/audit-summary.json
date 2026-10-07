@@ -11,12 +11,12 @@
         "endocrine": 4,
         "integumentary": 5,
         "lymphatic": 3,
-        "muscular": 399,
+        "muscular": 413,
         "nervous": 146,
         "reproductive": 12,
         "respiratory": 119,
         "sensory": 39,
-        "skeletal": 294,
+        "skeletal": 280,
         "urinary": 6,
         "venous": 395
       }

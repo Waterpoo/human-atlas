@@ -27,7 +27,7 @@ try{
  assert.equal(await page.getByRole('slider',{name:'Structure separation',exact:true}).inputValue(),'20');
  await page.getByRole('button',{name:'Reset view and layers',exact:true}).click();
  const audit=await page.request.get('http://127.0.0.1:3017/ANATOMY-AUDIT.html');
- assert.equal(audit.status(),200);assert.ok((await audit.text()).includes('59 confirmed system assignments'));
+ assert.equal(audit.status(),200);assert.ok((await audit.text()).includes('73 confirmed system assignments'));
  await page.getByRole('button',{name:'About this atlas',exact:true}).click();
  await page.getByRole('link',{name:'Read the included anatomy audit',exact:true}).click();
  await page.waitForURL('**/ANATOMY-AUDIT.html');

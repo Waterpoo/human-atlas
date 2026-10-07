@@ -20,10 +20,18 @@ try{
  await page.getByLabel('Reference model',{exact:true}).selectOption('male');
  await page.getByText('2,234 modeled pieces',{exact:false}).waitFor({timeout:90000});
  await page.getByText('Preparing the anatomy').waitFor({state:'hidden',timeout:90000});
+ const opacity=page.getByRole('slider',{name:'Muscles opacity',exact:true});
+ await opacity.press('Home');for(let i=0;i<25;i++)await opacity.press('ArrowRight');
+ await page.waitForFunction(()=>JSON.parse(document.querySelector('canvas').dataset.systemOpacity).muscular===.25);
+ await page.getByRole('spinbutton',{name:'Separation percentage'}).fill('20');
+ assert.equal(await page.getByRole('slider',{name:'Structure separation',exact:true}).inputValue(),'20');
+ await page.getByRole('button',{name:'Reset view and layers',exact:true}).click();
+ const audit=await page.request.get('http://127.0.0.1:3017/ANATOMY-AUDIT.html');
+ assert.equal(audit.status(),200);assert.ok((await audit.text()).includes('59 confirmed system assignments'));
  await page.getByRole('button',{name:'Move camera up',exact:true}).click();
  await page.getByRole('button',{name:'RMT Study',exact:true}).click();
  await page.getByRole('region',{name:'RMT study'}).getByRole('heading',{name:'Trapezius'}).waitFor();
  assert.equal(await app.evaluate(({BrowserWindow})=>BrowserWindow.getAllWindows()[0].webContents.getLastWebPreferences().nodeIntegration),false);
  assert.deepEqual(errors,[]);
- console.log('Desktop starts with external network requests blocked, loads both bundled models, moves the camera, opens study tools, and disables renderer Node integration.');
+ console.log('Desktop starts with external network requests blocked, loads both bundled models, verifies opacity/separation and the included audit, moves the camera, opens study tools, and disables renderer Node integration.');
 }catch(error){const page=(await app.windows())[0];if(page){console.error(await page.locator('body').innerText());await page.screenshot({path:'desktop-failure.png'});}throw error;}finally{await app.close();clearTimeout(watchdog);}

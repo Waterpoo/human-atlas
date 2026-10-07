@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 root=Path(__file__).resolve().parents[1];out=root/'audits';out.mkdir(exist_ok=True)
 rows=[];summaries=[]
-for filename in ['atlas.json','atlas-female.json']:
+for filename in ['atlas.json','atlas-female.json','atlas-extended.json']:
  atlas=json.loads((root/'public/models'/filename).read_text());buffers=[]
  for chunk in atlas['chunks']:
   path=root/'public'/chunk['url'].lstrip('/');b=path.read_bytes();assert len(b)==chunk['bytes']
@@ -21,8 +21,8 @@ for filename in ['atlas.json','atlas-female.json']:
   if filename=='atlas-female.json' and p['id'].startswith('Allen_'):flags.append('source_brain_laterality_requires_review: Allen hemisphere labels oppose body convention')
   if p['id'] in ['VH_F_superior_rectal_vein','VH_F_inferior_mesenteric_vein']:flags.append('source_identity_conflict: mesh node says vein; source label and ontology say artery')
   if p['id']=='VH_F_left_anterior_descending_artery':flags.append('source_label_conflict: node says coronary LAD; label says pulmonary branch')
-  rows.append(dict(model=atlas['sex'],id=p['id'],name=p['name'],system=p['system'],vertices=p['vertexCount'],triangles=p['indexCount']//3,bounds=json.dumps([lo.tolist(),hi.tolist()]),geometry_sha256=hashlib.sha256(pos.tobytes()+ind.tobytes()+norm.tobytes()).hexdigest(),geometry_check='pass',review_flags='; '.join(flags)))
- summaries.append(dict(model=atlas['sex'],parts=len(atlas['parts']),systems={s:sum(p['system']==s for p in atlas['parts']) for s in sorted(set(p['system'] for p in atlas['parts']))}))
+  rows.append(dict(model='extended-male' if filename=='atlas-extended.json' else atlas['sex'],id=p['id'],name=p['name'],system=p['system'],vertices=p['vertexCount'],triangles=p['indexCount']//3,bounds=json.dumps([lo.tolist(),hi.tolist()]),geometry_sha256=hashlib.sha256(pos.tobytes()+ind.tobytes()+norm.tobytes()).hexdigest(),geometry_check='pass',review_flags='; '.join(flags)))
+ summaries.append(dict(model='extended-male' if filename=='atlas-extended.json' else atlas['sex'],parts=len(atlas['parts']),systems={s:sum(p['system']==s for p in atlas['parts']) for s in sorted(set(p['system'] for p in atlas['parts']))}))
 with (out/'component-audit.csv').open('w') as f:
  w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
 (out/'audit-summary.json').write_text(json.dumps(dict(models=summaries,total_parts=len(rows),geometry_passes=len(rows),flagged_parts=sum(bool(r['review_flags']) for r in rows),clinical_or_anatomical_certification=False),indent=2)+'\n')

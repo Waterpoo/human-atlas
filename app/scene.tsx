@@ -15,7 +15,7 @@ export default function AnatomyScene({atlas,state,onSelect,onProgress,onError}:P
  useEffect(()=>{
   const el=host.current!;let disposed=false,frame=0,dirty=true,ready=false,lastView='',lastReset=-1,lastIsolate='',layoutKey='',amount=0;
   let lastState:SceneState|null=null;
-  let lastHeight=0;
+  let lastHeight=0,lastAppearance='';const contrastUniform={value:1};
   const abort=new AbortController();
   let renderer:T.WebGLRenderer;
   try{renderer=new T.WebGLRenderer({antialias:true,alpha:false,powerPreference:'high-performance'});}catch{onError('This browser could not start the 3D viewer. Please try a browser with WebGL enabled.');return;}
@@ -47,11 +47,12 @@ export default function AnatomyScene({atlas,state,onSelect,onProgress,onError}:P
   const materialFor=(system:string)=>{
    const m=new T.MeshStandardMaterial({color:SYSTEMS.find(s=>s.id===system)?.color??'#aebbb8',metalness:.08,roughness:.53,side:T.DoubleSide,transparent:system==='integumentary',opacity:system==='integumentary'?.1:1,depthWrite:system!=='integumentary'});
    m.onBeforeCompile=shader=>{
-    shader.uniforms.partState={value:partTexture};shader.uniforms.selectionState={value:selectionTexture};shader.uniforms.stateWidth={value:width};
+    shader.uniforms.anatomyContrast=contrastUniform;shader.uniforms.partState={value:partTexture};shader.uniforms.selectionState={value:selectionTexture};shader.uniforms.stateWidth={value:width};
     shader.vertexShader='attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float partVisible; varying float partSelected;\n'+shader.vertexShader;
     shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; partVisible = state.w; partSelected = texture2D(selectionState, stateUv).r;');
-    shader.fragmentShader='varying float partVisible; varying float partSelected;\n'+shader.fragmentShader;
+    shader.fragmentShader='uniform float anatomyContrast; varying float partVisible; varying float partSelected;\n'+shader.fragmentShader;
     shader.fragmentShader=shader.fragmentShader.replace('#include <clipping_planes_fragment>','#include <clipping_planes_fragment>\nif (partVisible < 0.5) discard;');
+    shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>','outgoingLight = max(vec3(0.0), (outgoingLight - vec3(0.35)) * anatomyContrast + vec3(0.35));\n#include <opaque_fragment>');
     shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>','#include <color_fragment>\ndiffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.42, 0.85, 0.78), partSelected * 0.75);');
    };materials.push(m);return m;
   };
@@ -97,6 +98,7 @@ export default function AnatomyScene({atlas,state,onSelect,onProgress,onError}:P
   const clock=new T.Clock();let lastExtent=-1;
   const animate=()=>{
    if(disposed)return;frame=requestAnimationFrame(animate);const dt=Math.min(clock.getDelta(),.05),s=latest.current;
+   const appearanceKey=(s.background??'#65717f')+':'+(s.contrast??1);if(appearanceKey!==lastAppearance){renderer.setClearColor(s.background??'#65717f');contrastUniform.value=s.contrast??1;renderer.domElement.dataset.background=s.background??'#65717f';renderer.domElement.dataset.modelContrast=String(contrastUniform.value);lastAppearance=appearanceKey;dirty=true;}
    const opacityChanged=lastState?.opacity!==s.opacity;
    if(opacityChanged||!lastState){mats.forEach((m,id)=>{const opacity=systemOpacity(s,id);const transparent=opacity<1;if(m.transparent!==transparent){m.transparent=transparent;m.needsUpdate=true;}m.opacity=opacity;m.depthWrite=!transparent;});renderer.domElement.dataset.systemOpacity=JSON.stringify(Object.fromEntries([...mats].map(([id,m])=>[id,m.opacity])));dirty=true;}
    const changed=opacityChanged||lastState?.visible!==s.visible||lastState?.selected!==s.selected||lastState?.isolate!==s.isolate;
@@ -114,7 +116,7 @@ export default function AnatomyScene({atlas,state,onSelect,onProgress,onError}:P
      else {const t=(amount-.45)/.55,group=SYSTEMS.findIndex(sys=>sys.id===p.system),angle=group/SYSTEMS.length*Math.PI*2;dx=T.MathUtils.lerp(Math.sin(angle)*.48,destination.x-c.x,t);dy=T.MathUtils.lerp((c.y-.85)*.28,destination.y-c.y,t);dz=T.MathUtils.lerp(Math.cos(angle)*.48,-c.z,t);}
      const selected=selection.has(p.id);data.set([dx,dy,dz,(s.isolate?selected:(visible.has(p.system)||selected)&&systemOpacity(s,p.system)>0)?1:0],i*4);selectedData[i*4]=selected?255:0;
      markerPositions.set(data[i*4+3]>.5?[c.x+dx,c.y+dy,c.z+dz]:[10000,10000,10000],i*3);const mesh=pickers[i];if(mesh){mesh.position.set(dx,dy,dz);mesh.updateMatrix();mesh.updateMatrixWorld(true);}
-    });renderer.domElement.dataset.visibleSystemCounts=JSON.stringify(Object.fromEntries(SYSTEMS.map(system=>[system.id,atlas.parts.filter((p,i)=>p.system===system.id&&data[i*4+3]>.5).length])));partTexture.needsUpdate=true;selectionTexture.needsUpdate=true;markerGeometry.attributes.position.needsUpdate=true;lastState=s;lastExtent=amount;dirty=true;
+    });renderer.domElement.dataset.selectedParts=JSON.stringify(s.selected);renderer.domElement.dataset.visibleSystemCounts=JSON.stringify(Object.fromEntries(SYSTEMS.map(system=>[system.id,atlas.parts.filter((p,i)=>p.system===system.id&&data[i*4+3]>.5).length])));partTexture.needsUpdate=true;selectionTexture.needsUpdate=true;markerGeometry.attributes.position.needsUpdate=true;lastState=s;lastExtent=amount;dirty=true;
    }
    if(s.view!==lastView||s.reset!==lastReset){fit(s.view,amount);lastView=s.view;lastReset=s.reset;}
    if(moving&&!s.isolate)fit(amount>.5?'front':s.view,Math.max(0,(amount-.3)/.7));

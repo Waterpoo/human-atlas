@@ -2,8 +2,8 @@ import {test,expect} from '@playwright/test';
 test('Study, saved notes, quiz, 3D matching, and complete offline reload',async({page,context})=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');await expect(page.getByText('Preparing the anatomy')).toBeHidden({timeout:60000});await expect(page.getByRole('alert')).toHaveCount(0);
- await page.getByRole('button',{name:'RMT Study',exact:true}).click();
- const study=page.getByRole('region',{name:'RMT study'});
+ await page.getByRole('button',{name:'Muscle reference',exact:true}).click();
+ const study=page.getByRole('region',{name:'Muscle reference'});
  await expect(study.getByRole('heading',{name:'Trapezius',exact:true})).toBeVisible();
  await study.getByRole('button',{name:'Show in 3D'}).click();
  await study.getByLabel('Region',{exact:true}).selectOption('Leg');
@@ -32,7 +32,7 @@ test('Study, saved notes, quiz, 3D matching, and complete offline reload',async(
  await page.evaluate(async()=>{await navigator.serviceWorker.ready;});
  await context.setOffline(true);await page.reload();
  await expect(page.getByText('Preparing the anatomy')).toBeHidden({timeout:60000});await expect(page.getByRole('alert')).toHaveCount(0);
- await page.getByRole('button',{name:'RMT Study',exact:true}).click();
+ await page.getByRole('button',{name:'Muscle reference',exact:true}).click();
  await expect(study.getByRole('textbox',{name:'My study notes'})).toHaveValue('Restored note.');
  await study.getByRole('button',{name:'favorites',exact:true}).click();await expect(study.getByRole('heading',{name:'Trapezius'})).toBeVisible();
  await page.setViewportSize({width:390,height:844});await expect(study).toBeVisible();
@@ -68,9 +68,9 @@ test('Female model, clear selections, stage-free camera pan, and both models off
  await page.screenshot({path:'test-results/female-view.png'});
  await expect(page.getByText('Partial muscle and skeleton coverage')).toBeVisible();
  await expect(page.getByRole('switch',{name:'Show pregnancy reference'})).not.toBeChecked();
- await page.getByRole('button',{name:'RMT Study',exact:true}).click();
- await expect(page.getByRole('region',{name:'RMT study'}).getByText('No corresponding mesh in this dataset.')).toBeVisible();
- await page.getByRole('button',{name:'Close RMT study'}).click();
+ await page.getByRole('button',{name:'Muscle reference',exact:true}).click();
+ await expect(page.getByRole('region',{name:'Muscle reference'}).getByText('No corresponding mesh in this dataset.')).toBeVisible();
+ await page.getByRole('button',{name:'Close Muscle reference'}).click();
  await page.getByRole('button',{name:'Search anatomy',exact:true}).click();
  await page.getByLabel('Search named anatomical structures').fill('uterus');
  await page.getByRole('option').filter({has:page.getByText('uterus',{exact:true})}).click();
@@ -117,10 +117,10 @@ test('Female model, clear selections, stage-free camera pan, and both models off
  if(sex==='male'){
  for(const baseId of ['FJ1409','FJ1410','FJ1411','FJ1439','FJ1440','FJ1504','FJ1532'])for(const suffix of ['', 'M'])expect(atlas.parts.find((p:{id:string})=>p.id===baseId+suffix)?.system).toBe('muscular');
  }
- for(const [id,name] of Object.entries({skeletal:'Skeleton',muscular:'Muscles',cardiac:'Heart',sensory:'Sensory organs',arterial:'Arteries',venous:'Veins',nervous:'Nervous system',respiratory:'Respiratory',digestive:'Digestive',urinary:'Urinary',lymphatic:'Lymphatic',endocrine:'Endocrine',reproductive:'Reproductive',integumentary:'Body surface',pregnancy:'Pregnancy reference',connective:'Connective tissue'})){
+ for(const [id,name] of Object.entries({joints:'Joints',skeletal:'Skeleton',muscular:'Muscles',cardiac:'Heart',sensory:'Sensory organs',arterial:'Arteries',venous:'Veins',nervous:'Nervous system',respiratory:'Respiratory',digestive:'Digestive',urinary:'Urinary',lymphatic:'Lymphatic',endocrine:'Endocrine',reproductive:'Reproductive',integumentary:'Body surface',pregnancy:'Pregnancy reference',connective:'Connective tissue'})){
  const expected=atlas.parts.filter((p:{system:string})=>p.system===id).length;if(!expected)continue;
  await page.locator('.system-name').filter({hasText:name}).click();
- await expect.poll(async()=>JSON.parse((await page.locator('canvas').getAttribute('data-visible-system-counts'))??'{}')).toEqual(Object.fromEntries(Object.keys({skeletal:1,muscular:1,cardiac:1,sensory:1,arterial:1,venous:1,nervous:1,respiratory:1,digestive:1,urinary:1,lymphatic:1,endocrine:1,reproductive:1,integumentary:1,pregnancy:1,connective:1}).map(s=>[s,s===id?expected:0])));
+ await expect.poll(async()=>JSON.parse((await page.locator('canvas').getAttribute('data-visible-system-counts'))??'{}')).toEqual(Object.fromEntries(Object.keys({joints:1,skeletal:1,muscular:1,cardiac:1,sensory:1,arterial:1,venous:1,nervous:1,respiratory:1,digestive:1,urinary:1,lymphatic:1,endocrine:1,reproductive:1,integumentary:1,pregnancy:1,connective:1}).map(s=>[s,s===id?expected:0])));
  await expect(page.getByRole('alert')).toHaveCount(0);await page.screenshot({path:`test-results/${sex}-${id}-view.png`});
  }
  }

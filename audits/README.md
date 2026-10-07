@@ -1,6 +1,6 @@
 # Component audit — known source limitations
 
-All 3,122 components (2,234 male; 888 female) have an individual record in component-audit.csv. Each record checks its geometry buffers, finite coordinates, valid indices, nonempty normals, containment within stored original bounds, and compressed geometry integrity. These checks establish data integrity, not anatomical certification. Larger original bounds are intentional after geometry simplification.
+All 5,943 components (2,234 original male; 888 female; 2,821 extended male) have an individual record in component-audit.csv. Each record checks its geometry buffers, finite coordinates, valid indices, nonempty normals, containment within stored original bounds, and compressed geometry integrity. These checks establish data integrity, not anatomical certification. Larger original bounds are intentional after geometry simplification.
 
 73 confirmed system assignments were corrected; the full before/after list is system-corrections.json. Both sides of fibularis brevis, longus and tertius, tibialis anterior and posterior, subscapularis and levator scapulae move from Skeleton to Muscles. Brain ventricular spaces and choroid plexuses move to Nervous system; tensor fasciae latae to Muscles; wrist retinacula to Connective tissue; lacrimal bones to Skeleton; gingiva to Digestive/oral structures; papillary muscles to Heart; nine hepatic tissue segments to Digestive (the word hepatovenous describes their liver subdivision, not a vein mesh). Female cardiac vessels move to Arteries, palatine tonsils to Lymphatic, optic nerves/tracts to Nervous system, and quadriceps tendons to Connective tissue.
 
@@ -23,3 +23,11 @@ Sources reviewed:
 - Brain reference provenance: https://3d.nih.gov/entries/3DPX-020959
 
 Run python3 scripts/audit-anatomy.py (requires NumPy) to regenerate the itemized audit. npm test enforces reviewed system corrections. The browser suite also exercises every available system individually in both models and records system screenshots; it checks the complete rendered component inventory and page errors. It is not a substitute for expert anatomical review.
+
+## Extended Z-Anatomy reference (version 1.3)
+
+The application also includes a separate extended adult male atlas imported reproducibly from nqwrc/3d-anatomy commit 8ca3b7421bcfbe88b85859eb1983d5cf79f21749, a GLB export of Z-Anatomy. It contains 2,821 individually selectable components, including 349 joint components, and 4,375 searchable concepts. See z-anatomy-import.json for per-source hashes and counts. Original GLB node/world transforms are retained; negative-determinant transforms reverse triangle winding. Geometry is simplified with a maximum relative error of 0.001 and normals are recomputed. Joint groups highlight existing surfaces; they are not invented joint-center coordinates. The ankle entry is explicitly a region group rather than a whole-joint segmentation.
+
+Six separately licensed kidney and inner-ear components are excluded from this derivative; the original male/female references remain available. Models are CC BY-SA 4.0, with upstream BodyParts3D attribution and separate upstream notices preserved. Source definitions and Latin names are included where supplied, with definition source links and Wikipedia CC BY-SA 3.0 attribution. These are source descriptions, not clinically validated medical guidance. This extension is gross anatomy coverage, not a complete library of pathology, physiology, histology or every medical topic. Counts and software checks do not establish anatomical certification.
+
+Unidentified source vascular nodes (?x.l, ?x.r and ????????) retain their exact source identifiers and are displayed as unidentified components. They are grouped using their source vascular parent (pterygoid-canal arteries and coronary sinus), rather than given invented anatomical names.

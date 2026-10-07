@@ -41,10 +41,31 @@
         "urinary": 87,
         "venous": 57
       }
+    },
+    {
+      "model": "extended-male",
+      "parts": 2821,
+      "systems": {
+        "arterial": 427,
+        "cardiac": 17,
+        "connective": 153,
+        "digestive": 47,
+        "endocrine": 10,
+        "joints": 349,
+        "lymphatic": 158,
+        "muscular": 516,
+        "nervous": 556,
+        "reproductive": 14,
+        "respiratory": 39,
+        "sensory": 20,
+        "skeletal": 277,
+        "urinary": 6,
+        "venous": 232
+      }
     }
   ],
-  "total_parts": 3122,
-  "geometry_passes": 3122,
-  "flagged_parts": 331,
+  "total_parts": 5943,
+  "geometry_passes": 5943,
+  "flagged_parts": 338,
   "clinical_or_anatomical_certification": false
 }

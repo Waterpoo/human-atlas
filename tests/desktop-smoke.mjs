@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 const exe=process.argv[2];
 const gpu=process.arch==='arm64'?[]:['--use-gl=angle','--use-angle=swiftshader-webgl','--enable-unsafe-swiftshader'];
 console.log('Launching packaged desktop:',exe??'development');
-const watchdog=setTimeout(()=>{console.error('Desktop smoke test exceeded eight minutes');process.exit(1);},480000);
+const watchdog=setTimeout(()=>{console.error('Desktop smoke test exceeded twelve minutes');process.exit(1);},720000);
 const app=await electron.launch(exe?{executablePath:exe,args:gpu,timeout:180000}:{args:['desktop/main.cjs',...gpu],timeout:180000});
 console.log('Electron connected');
 try{
@@ -20,6 +20,17 @@ try{
  await page.getByLabel('Reference model',{exact:true}).selectOption('male');
  await page.getByText('2,234 modeled pieces',{exact:false}).waitFor({timeout:90000});
  await page.getByText('Preparing the anatomy').waitFor({state:'hidden',timeout:90000});
+ await page.getByLabel('Reference model',{exact:true}).selectOption('extended');
+ await page.getByText('2,821 modeled pieces',{exact:false}).waitFor({timeout:120000});
+ await page.getByText('Preparing the anatomy').waitFor({state:'hidden',timeout:120000});
+ await page.locator('.system-name').filter({hasText:'Joints'}).click();
+ await page.waitForFunction(()=>JSON.parse(document.querySelector('canvas').dataset.visibleSystemCounts).joints===349);
+ await page.getByRole('button',{name:'View appearance',exact:true}).click();
+ await page.getByRole('button',{name:'Dark background',exact:true}).click();
+ await page.waitForFunction(()=>document.querySelector('canvas').dataset.background==='#202936');
+ await page.keyboard.press('Escape');
+ await page.getByLabel('Reference model',{exact:true}).selectOption('male');
+ await page.getByText('Preparing the anatomy').waitFor({state:'hidden',timeout:90000});
  const opacity=page.getByRole('slider',{name:'Muscles opacity',exact:true});
  await opacity.press('Home');for(let i=0;i<25;i++)await opacity.press('ArrowRight');
  await page.waitForFunction(()=>JSON.parse(document.querySelector('canvas').dataset.systemOpacity).muscular===.25);
@@ -35,9 +46,9 @@ try{
  await page.waitForSelector('canvas',{timeout:90000});
  await page.getByText('Preparing the anatomy').waitFor({state:'hidden',timeout:90000});
  await page.getByRole('button',{name:'Move camera up',exact:true}).click();
- await page.getByRole('button',{name:'RMT Study',exact:true}).click();
- await page.getByRole('region',{name:'RMT study'}).getByRole('heading',{name:'Trapezius'}).waitFor();
+ await page.getByRole('button',{name:'Muscle reference',exact:true}).click();
+ await page.getByRole('region',{name:'Muscle reference'}).getByRole('heading',{name:'Trapezius'}).waitFor();
  assert.equal(await app.evaluate(({BrowserWindow})=>BrowserWindow.getAllWindows()[0].webContents.getLastWebPreferences().nodeIntegration),false);
  assert.deepEqual(errors,[]);
- console.log('Desktop starts with external network requests blocked, loads both bundled models, verifies opacity/separation and the included audit, moves the camera, opens study tools, and disables renderer Node integration.');
+ console.log('Desktop starts with external network requests blocked, loads all three bundled models, verifies opacity/separation and the included audit, moves the camera, opens study tools, and disables renderer Node integration.');
 }catch(error){const page=(await app.windows())[0];if(page){console.error(await page.locator('body').innerText());await page.screenshot({path:'desktop-failure.png'});}throw error;}finally{await app.close();clearTimeout(watchdog);}

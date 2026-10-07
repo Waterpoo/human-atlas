@@ -1,0 +1,100 @@
+{
+  "upstream": "nqwrc/3d-anatomy",
+  "commit": "8ca3b7421bcfbe88b85859eb1983d5cf79f21749",
+  "sourceReports": [
+    {
+      "file": "skeletal.glb",
+      "sha256": "c2b70b31ddec4062cbc5ba969fc24ecfed61d00397a0bca795e2701d997200f8",
+      "nodes": 277,
+      "included": 277
+    },
+    {
+      "file": "joints.glb",
+      "sha256": "9fdab1a257652597cf8f0b2ac93d12abc817e8f9a9099b9628e764018490afa2",
+      "nodes": 349,
+      "included": 349
+    },
+    {
+      "file": "muscular.glb",
+      "sha256": "f69ed1287f802a2d603d23293e01512bb57ae77ee7cca1d5527ba00496e51de2",
+      "nodes": 669,
+      "included": 669
+    },
+    {
+      "file": "cardiovascular.glb",
+      "sha256": "bc94c7b8eb1712f18ee461e064140e54aa817f3614e0f56a45b00e2a829cfb59",
+      "nodes": 676,
+      "included": 676
+    },
+    {
+      "file": "lymphatic.glb",
+      "sha256": "718cac2b26ad752224cc8a11b2d5bf733fb523b75d9614822a24af7d19202756",
+      "nodes": 158,
+      "included": 158
+    },
+    {
+      "file": "nervous.glb",
+      "sha256": "c7cde35497f887b319c0a84f1b5b605fa3ce66e23084b5e09d6e3825fa5030d9",
+      "nodes": 580,
+      "included": 576
+    },
+    {
+      "file": "visceral.glb",
+      "sha256": "b21a0f34b3da1bb0b6a9a6ae71d16ffbc036beb504944af2422d4b91a9317fe5",
+      "nodes": 118,
+      "included": 116
+    }
+  ],
+  "parts": 2821,
+  "concepts": 4375,
+  "triangles": 4747386,
+  "excluded": [
+    {
+      "name": "Cochlea.l",
+      "reason": "separately licensed non-commercial component"
+    },
+    {
+      "name": "Cochlea.r",
+      "reason": "separately licensed non-commercial component"
+    },
+    {
+      "name": "Vestibule.l",
+      "reason": "separately licensed non-commercial component"
+    },
+    {
+      "name": "Vestibule.r",
+      "reason": "separately licensed non-commercial component"
+    },
+    {
+      "name": "Kidney.l",
+      "reason": "separately licensed non-commercial component"
+    },
+    {
+      "name": "Kidney.r",
+      "reason": "separately licensed non-commercial component"
+    }
+  ],
+  "systems": {
+    "skeletal": 277,
+    "joints": 349,
+    "connective": 153,
+    "muscular": 516,
+    "arterial": 427,
+    "cardiac": 17,
+    "venous": 232,
+    "lymphatic": 158,
+    "nervous": 556,
+    "sensory": 20,
+    "digestive": 47,
+    "respiratory": 39,
+    "endocrine": 10,
+    "reproductive": 14,
+    "urinary": 6
+  },
+  "bounds": [
+    -0.3353904262185097,
+    0.0034456034190945674,
+    -0.13111304397411033
+  ],
+  "geometryCertified": false
+}

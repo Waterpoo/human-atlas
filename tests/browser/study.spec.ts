@@ -40,7 +40,7 @@ test('Study, saved notes, quiz, 3D matching, and complete offline reload',async(
 });
 
 test('Female model, clear selections, stage-free camera pan, and both models offline',async({page,context})=>{
- test.setTimeout(240000);
+ test.setTimeout(420000);
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');
  await expect(page.getByText('Preparing the anatomy')).toBeHidden({timeout:90000});

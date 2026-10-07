@@ -28,6 +28,12 @@ try{
  await page.getByRole('button',{name:'Reset view and layers',exact:true}).click();
  const audit=await page.request.get('http://127.0.0.1:3017/ANATOMY-AUDIT.html');
  assert.equal(audit.status(),200);assert.ok((await audit.text()).includes('59 confirmed system assignments'));
+ await page.getByRole('button',{name:'About this atlas',exact:true}).click();
+ await page.getByRole('link',{name:'Read the included anatomy audit',exact:true}).click();
+ await page.waitForURL('**/ANATOMY-AUDIT.html');
+ await page.getByRole('link',{name:'Return to Halo Anatomy',exact:true}).click();
+ await page.waitForSelector('canvas',{timeout:90000});
+ await page.getByText('Preparing the anatomy').waitFor({state:'hidden',timeout:90000});
  await page.getByRole('button',{name:'Move camera up',exact:true}).click();
  await page.getByRole('button',{name:'RMT Study',exact:true}).click();
  await page.getByRole('region',{name:'RMT study'}).getByRole('heading',{name:'Trapezius'}).waitFor();

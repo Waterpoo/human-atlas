@@ -96,5 +96,42 @@
     0.0034456034190945674,
     -0.13111304397411033
   ],
+  "sourceWarnings": [
+    {
+      "id": "ZA:joints:Lateral temporomandibular ligament.l",
+      "name": "Lateral temporomandibular ligament [left]",
+      "warnings": [
+        "Source left/right label conflicts with body-side coordinates; laterality needs source review."
+      ]
+    },
+    {
+      "id": "ZA:joints:Lateral temporomandibular ligament.r",
+      "name": "Lateral temporomandibular ligament [right]",
+      "warnings": [
+        "Source left/right label conflicts with body-side coordinates; laterality needs source review."
+      ]
+    },
+    {
+      "id": "ZA:cardiovascular:?x.l",
+      "name": "Unidentified vascular component [?x.l]",
+      "warnings": [
+        "Source component has an unidentified anatomical name."
+      ]
+    },
+    {
+      "id": "ZA:cardiovascular:?x.r",
+      "name": "Unidentified vascular component [?x.r]",
+      "warnings": [
+        "Source component has an unidentified anatomical name."
+      ]
+    },
+    {
+      "id": "ZA:cardiovascular:????????",
+      "name": "Unidentified vascular component [????????]",
+      "warnings": [
+        "Source component has an unidentified anatomical name."
+      ]
+    }
+  ],
   "geometryCertified": false
 }

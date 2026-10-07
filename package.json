@@ -6,7 +6,7 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vite --host 0.0.0.0 --port 3016",
+    "dev": "npm run atlas:prepare && vite --host 0.0.0.0 --port 3016",
     "build": "npm run atlas:prepare && vite build && node scripts/offline-manifest.mjs",
     "build:vercel": "npm run atlas:prepare && vite build && node scripts/offline-manifest.mjs",
     "check": "tsc --noEmit",

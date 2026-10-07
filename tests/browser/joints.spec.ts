@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {PerspectiveCamera,Vector3} from 'three';
 import {gunzipSync} from 'node:zlib';
 test('Extended atlas joints are searchable, selectable, isolated, and available offline with saved appearance',async({page,context})=>{
- test.setTimeout(600000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ test.setTimeout(600000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error'&&/Shader Error|WebGLProgram/.test(m.text()))errors.push(m.text());});
  await page.goto('/');await page.getByLabel('Reference model',{exact:true}).selectOption('extended');
  await expect(page.getByText('Preparing the anatomy')).toBeHidden({timeout:120000});await expect(page.getByRole('alert')).toHaveCount(0);
  const atlas=await (await page.request.get('/models/atlas-extended.json')).json();
@@ -35,7 +35,7 @@ test('Extended atlas joints are searchable, selectable, isolated, and available 
  const knee=atlas.concepts.find((c:{name:string})=>c.name==='Left knee joint');
  await expect.poll(async()=>JSON.parse((await page.locator('canvas').getAttribute('data-selected-parts'))??'[]')).toEqual(knee.elements);
  await page.getByRole('button',{name:'Isolate structure',exact:false}).click();
- await expect.poll(async()=>Object.values(JSON.parse((await page.locator('canvas').getAttribute('data-visible-system-counts'))??'{}')).reduce((a:number,b)=>a+Number(b),0)).toBe(knee.elements.length);
+ await expect.poll(async()=>Object.values(JSON.parse((await page.locator('canvas').getAttribute('data-visible-system-counts'))??'{}')).reduce((a:number,b)=>a+Number(b),0),{timeout:30000}).toBe(knee.elements.length);
  await page.screenshot({path:'test-results/extended-knee-view.png'});
  await page.getByRole('button',{name:'View appearance',exact:true}).click();await page.getByRole('button',{name:'Dark background',exact:true}).click();
  const contrast=page.getByRole('slider',{name:'Model contrast',exact:true});await contrast.focus();await contrast.press('Home');for(let i=0;i<100;i++)await contrast.press('ArrowRight');

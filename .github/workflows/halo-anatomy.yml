@@ -34,8 +34,7 @@ jobs:
           name: Viewer-previews
           path: test-results/*-view.png
   mac:
-    # Hold installers while the source anatomy audit has unresolved identity/laterality flags.
-    if: ${{ false }}
+    # User approved packaging with documented source limitations on 2026-10-07.
     needs: test
     strategy:
       matrix:

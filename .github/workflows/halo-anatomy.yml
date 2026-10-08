@@ -70,6 +70,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Halo-Anatomy-Mac-${{ matrix.arch }}
-          path: |
-            release/*.dmg
-            release/*.zip
+          path: release/*.dmg

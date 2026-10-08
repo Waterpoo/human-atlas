@@ -24,6 +24,8 @@ npm run dev
 
 Open http://localhost:3016. `npm run dev`, `npm test` and `npm run build` prepare the extended atlas from the pinned source files. `npm run build` produces the static offline app in `dist/`, including its model assets and service-worker manifest. `npm run package:mac -- --arm64` or `--x64` builds the corresponding Mac installer.
 
+Version 1.3.1 adds 63 reference-backed display classification corrections and a complete 5,943-entry consistency report. See [classification review](audits/classification-review.json). Costal cartilage stays with Skeleton; modeled joint cartilage is in Joints and airway cartilage in Respiratory. Source identity, maturity and laterality uncertainties remain explicitly flagged.
+
 ## Validate
 
 ```sh

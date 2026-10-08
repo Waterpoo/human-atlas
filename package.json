@@ -1,6 +1,6 @@
 {
   "name": "halo-anatomy",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -10,7 +10,7 @@
     "build": "npm run atlas:prepare && vite build && node scripts/offline-manifest.mjs",
     "build:vercel": "npm run atlas:prepare && vite build && node scripts/offline-manifest.mjs",
     "check": "tsc --noEmit",
-    "test": "npm run atlas:prepare && python3 scripts/apply-anatomy-corrections.py --check && node scripts/validate-atlas.mjs && node scripts/validate-atlas.mjs atlas-female.json && node scripts/validate-interactions.mjs && node tests/study.mjs && node scripts/validate-atlas.mjs atlas-extended.json",
+    "test": "npm run atlas:prepare && python3 scripts/apply-anatomy-corrections.py --check && node scripts/validate-atlas.mjs && node scripts/validate-atlas.mjs atlas-female.json && node scripts/validate-interactions.mjs && node tests/study.mjs && node scripts/validate-atlas.mjs atlas-extended.json && node scripts/validate-classification.mjs",
     "desktop": "npm run build && electron desktop/main.cjs",
     "package:mac": "npm run build && electron-builder --mac",
     "atlas:prepare": "node scripts/import-z-anatomy.mjs"

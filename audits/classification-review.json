@@ -1,0 +1,710 @@
+{
+  "date": "2026-10-08",
+  "scope": "Display-layer classification review; does not certify geometric placement or resolve conflicting source identities.",
+  "sources": {
+    "skeleton": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-1-divisions-of-the-skeletal-system",
+    "airway": "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system",
+    "joint": "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints",
+    "syndesmosis": "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-2-fibrous-joints",
+    "neural": "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf",
+    "meninges": "https://openstax.org/books/anatomy-and-physiology/pages/13-3-circulation-and-the-central-nervous-system",
+    "fascia": "https://pubmed.ncbi.nlm.nih.gov/30725782/",
+    "muscle": "https://pubmed.ncbi.nlm.nih.gov/29500891/",
+    "terminology": "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-2.pdf"
+  },
+  "corrections": [
+    {
+      "model": "male",
+      "id": "FJ1392",
+      "name": "Interosseous membrane of right leg",
+      "from": "connective",
+      "to": "joints",
+      "reason": "Articular support ligament or interosseous syndesmosis; same joint layer convention as extended atlas.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-2-fibrous-joints"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ1392M",
+      "name": "Interosseous membrane of left leg",
+      "from": "connective",
+      "to": "joints",
+      "reason": "Articular support ligament or interosseous syndesmosis; same joint layer convention as extended atlas.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-2-fibrous-joints"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ1424",
+      "name": "Right long plantar ligament",
+      "from": "connective",
+      "to": "joints",
+      "reason": "Articular support ligament or interosseous syndesmosis; same joint layer convention as extended atlas.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-2.pdf"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ1424M",
+      "name": "Left long plantar ligament",
+      "from": "connective",
+      "to": "joints",
+      "reason": "Articular support ligament or interosseous syndesmosis; same joint layer convention as extended atlas.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-2.pdf"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ1476",
+      "name": "Interosseous membrane of right forearm",
+      "from": "connective",
+      "to": "joints",
+      "reason": "Articular support ligament or interosseous syndesmosis; same joint layer convention as extended atlas.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-2-fibrous-joints"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ1476M",
+      "name": "Interosseous membrane of left forearm",
+      "from": "connective",
+      "to": "joints",
+      "reason": "Articular support ligament or interosseous syndesmosis; same joint layer convention as extended atlas.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-2-fibrous-joints"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ2440",
+      "name": "Cricoid cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ2554",
+      "name": "Right major alar cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ2555",
+      "name": "Left major alar cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ2769",
+      "name": "Cricoid cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ2773",
+      "name": "Left cuneiform cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ2775",
+      "name": "Left arytenoid cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ2776",
+      "name": "Left corniculate cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ2792",
+      "name": "Right arytenoid cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ2793",
+      "name": "Right corniculate cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ2795",
+      "name": "Right cuneiform cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "male",
+      "id": "FJ2808",
+      "name": "Thyroid cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_dura_mater_right",
+      "name": "dura mater",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/13-3-circulation-and-the-central-nervous-system"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_dura_mater_left",
+      "name": "dura mater",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/13-3-circulation-and-the-central-nervous-system"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_optic_chiasm",
+      "name": "optic chiasma",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_central_nuclear_group_L",
+      "name": "central nuclear group (left)",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_anterior_nuclear_complex_of_thalamus_L",
+      "name": "anterior nuclear complex of thalamus (left)",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_supraoptic_region_of_HTH_L",
+      "name": "supraoptic region of HTH (left)",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_preoptic_region_of_HTH_L",
+      "name": "preoptic region of HTH (left)",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_basilar_part_of_pons_L",
+      "name": "pontine nuclear group",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_midline_nuclear_complex_L",
+      "name": "midline nuclear complex (left)",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_optic_radiation_L",
+      "name": "optic radiation",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_central_nuclear_group_R",
+      "name": "central nuclear group (right)",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_anterior_nuclear_complex_of_thalamus_R",
+      "name": "anterior nuclear complex of thalamus (right)",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_supraoptic_region_of_HTH_R",
+      "name": "supraoptic region of HTH (right)",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_basilar_part_of_pons_R",
+      "name": "pontine nuclear group",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_midline_nuclear_complex_R",
+      "name": "midline nuclear complex (right)",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_optic_radiation_R",
+      "name": "optic radiation",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "Allen_preoptic_region_of_HTH_R",
+      "name": "preoptic region of HTH (right)",
+      "from": "sensory",
+      "to": "nervous",
+      "reason": "Central neural tissue/visual pathway or meningeal covering, rather than an external sensory organ.",
+      "references": [
+        "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_right_tibial_collateral_ligament",
+      "name": "Right tibial collateral ligament",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_anterior_cruciate_ligament_of_knee_R",
+      "name": "Right anterior cruciate ligament",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_posterior_cruciate_ligament_of_knee_R",
+      "name": "Right posterior cruciate ligament",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_anterolateral_ligament_of_knee_R",
+      "name": "anterolateral ligament of knee",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_fibular_collateral_ligament_R",
+      "name": "Right fibular collateral ligament",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_patellar_ligament_R",
+      "name": "Right patellar ligament",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_articular_cartilage_of_knee_R",
+      "name": "Articular cartilage of distal epiphysis of right femur",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_anterolateral_ligament_of_knee_L",
+      "name": "anterolateral ligament of knee",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_fibular_collateral_ligament_L",
+      "name": "Left fibular collateral ligament",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_patellar_ligament_L",
+      "name": "Left patellar ligament",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_left_tibial_collateral_ligament",
+      "name": "Left tibial collateral ligament",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_anterior_cruciate_ligament_of_knee_L",
+      "name": "Left anterior cruciate ligament",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_posterior_cruciate_ligament_of_knee_L",
+      "name": "Left posterior cruciate ligament",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "female",
+      "id": "VH_F_articular_cartilage_of_knee_L",
+      "name": "Articular cartilage of distal epiphysis of left femur",
+      "from": "skeletal",
+      "to": "joints",
+      "reason": "Modeled knee stabilizing ligament or articular cartilage belongs in the dedicated joint display layer.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:skeletal:Arytenoid cartilage.l",
+      "name": "Arytenoid cartilage [left]",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:skeletal:Arytenoid cartilage.r",
+      "name": "Arytenoid cartilage [right]",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:skeletal:Corniculate cartilage.l",
+      "name": "Corniculate cartilage [left]",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:skeletal:Corniculate cartilage.r",
+      "name": "Corniculate cartilage [right]",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:skeletal:Cricoid cartilage",
+      "name": "Cricoid cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:skeletal:Thyroid cartilage",
+      "name": "Thyroid cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:skeletal:Lateral process of nasal septal cartilage.l",
+      "name": "Lateral process of nasal septal cartilage [left]",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:skeletal:Lateral process of nasal septal cartilage.r",
+      "name": "Lateral process of nasal septal cartilage [right]",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:skeletal:Major alar cartilage.l",
+      "name": "Major alar cartilage [left]",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:skeletal:Major alar cartilage.r",
+      "name": "Major alar cartilage [right]",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:skeletal:Nasal septal cartilage",
+      "name": "Nasal septal cartilage",
+      "from": "skeletal",
+      "to": "respiratory",
+      "reason": "Nasal/laryngeal support cartilage is displayed with its airway organ, consistently across references.",
+      "references": [
+        "https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:muscular:Iliotibial tract.l",
+      "name": "Iliotibial tract [left]",
+      "from": "muscular",
+      "to": "connective",
+      "reason": "Iliotibial tract is a fascial reinforcement, not a muscle.",
+      "references": [
+        "https://pubmed.ncbi.nlm.nih.gov/30725782/"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:muscular:Tensor fasciae latae.l",
+      "name": "Tensor fasciae latae [left]",
+      "from": "connective",
+      "to": "muscular",
+      "reason": "Tensor fasciae latae is a skeletal muscle; fascia in its name does not make it fascia.",
+      "references": [
+        "https://pubmed.ncbi.nlm.nih.gov/29500891/"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:muscular:Iliotibial tract.r",
+      "name": "Iliotibial tract [right]",
+      "from": "muscular",
+      "to": "connective",
+      "reason": "Iliotibial tract is a fascial reinforcement, not a muscle.",
+      "references": [
+        "https://pubmed.ncbi.nlm.nih.gov/30725782/"
+      ]
+    },
+    {
+      "model": "extended-male",
+      "id": "ZA:muscular:Tensor fasciae latae.r",
+      "name": "Tensor fasciae latae [right]",
+      "from": "connective",
+      "to": "muscular",
+      "reason": "Tensor fasciae latae is a skeletal muscle; fascia in its name does not make it fascia.",
+      "references": [
+        "https://pubmed.ncbi.nlm.nih.gov/29500891/"
+      ]
+    }
+  ]
+}

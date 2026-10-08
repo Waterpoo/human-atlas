@@ -1,6 +1,6 @@
 export type SystemId = 'skeletal'|'muscular'|'arterial'|'venous'|'nervous'|'digestive'|'respiratory'|'urinary'|'reproductive'|'lymphatic'|'endocrine'|'integumentary'|'connective'|'sensory'|'cardiac'|'pregnancy'|'joints';
 export const SYSTEMS: {id:SystemId;name:string;color:string;description:string}[] = [
- {id:'skeletal',name:'Skeleton',color:'#e2d9ba',description:'Bones form the supporting framework of the body, protect organs, and provide attachment points for muscles. Their internal tissue also stores minerals and produces blood cells.'},
+ {id:'skeletal',name:'Skeleton',color:'#e2d9ba',description:'This layer contains bones, costal cartilage and dental components grouped with the skull. Costal cartilage supports the thoracic cage. Separately modeled joint cartilage is in Joints; nasal and laryngeal cartilage is in Respiratory.'},
  {id:'joints',name:'Joints',color:'#73b3ca',description:'Joint capsules, ligaments, labra, menisci and intervertebral discs from the selected source anatomy. Select a modeled surface to inspect it or search for a joint to highlight its available components.'},
  {id:'muscular',name:'Muscles',color:'#a85b50',description:'Skeletal muscles generate movement by pulling on their attachments. Together with tendons, they move joints, stabilize posture, and produce heat.'},
  {id:'cardiac',name:'Heart',color:'#b96760',description:'The heart is a muscular pump with four chambers. Its valves direct blood forward through the pulmonary and systemic circuits.'},

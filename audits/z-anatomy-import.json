@@ -75,7 +75,8 @@
     }
   ],
   "systems": {
-    "skeletal": 277,
+    "skeletal": 266,
+    "respiratory": 50,
     "joints": 349,
     "connective": 153,
     "muscular": 516,
@@ -86,7 +87,6 @@
     "nervous": 556,
     "sensory": 20,
     "digestive": 47,
-    "respiratory": 39,
     "endocrine": 10,
     "reproductive": 14,
     "urinary": 6
@@ -97,6 +97,20 @@
     -0.13111304397411033
   ],
   "sourceWarnings": [
+    {
+      "id": "ZA:joints:Triradiate cartilage.l",
+      "name": "Triradiate cartilage [left]",
+      "warnings": [
+        "Developmental acetabular cartilage: appearance depends on skeletal maturity; this source component is not verified as a mature adult structure."
+      ]
+    },
+    {
+      "id": "ZA:joints:Triradiate cartilage.r",
+      "name": "Triradiate cartilage [right]",
+      "warnings": [
+        "Developmental acetabular cartilage: appearance depends on skeletal maturity; this source component is not verified as a mature adult structure."
+      ]
+    },
     {
       "id": "ZA:joints:Lateral temporomandibular ligament.l",
       "name": "Lateral temporomandibular ligament [left]",

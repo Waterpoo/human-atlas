@@ -509,5 +509,341 @@
     "name": "Left levator scapulae",
     "from": "skeletal",
     "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1392",
+    "name": "Interosseous membrane of right leg",
+    "from": "connective",
+    "to": "joints"
+  },
+  {
+    "model": "male",
+    "id": "FJ1392M",
+    "name": "Interosseous membrane of left leg",
+    "from": "connective",
+    "to": "joints"
+  },
+  {
+    "model": "male",
+    "id": "FJ1424",
+    "name": "Right long plantar ligament",
+    "from": "connective",
+    "to": "joints"
+  },
+  {
+    "model": "male",
+    "id": "FJ1424M",
+    "name": "Left long plantar ligament",
+    "from": "connective",
+    "to": "joints"
+  },
+  {
+    "model": "male",
+    "id": "FJ1476",
+    "name": "Interosseous membrane of right forearm",
+    "from": "connective",
+    "to": "joints"
+  },
+  {
+    "model": "male",
+    "id": "FJ1476M",
+    "name": "Interosseous membrane of left forearm",
+    "from": "connective",
+    "to": "joints"
+  },
+  {
+    "model": "male",
+    "id": "FJ2440",
+    "name": "Cricoid cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2554",
+    "name": "Right major alar cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2555",
+    "name": "Left major alar cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2769",
+    "name": "Cricoid cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2773",
+    "name": "Left cuneiform cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2775",
+    "name": "Left arytenoid cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2776",
+    "name": "Left corniculate cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2792",
+    "name": "Right arytenoid cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2793",
+    "name": "Right corniculate cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2795",
+    "name": "Right cuneiform cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2808",
+    "name": "Thyroid cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_dura_mater_right",
+    "name": "dura mater",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_dura_mater_left",
+    "name": "dura mater",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_optic_chiasm",
+    "name": "optic chiasma",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_central_nuclear_group_L",
+    "name": "central nuclear group (left)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_anterior_nuclear_complex_of_thalamus_L",
+    "name": "anterior nuclear complex of thalamus (left)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_supraoptic_region_of_HTH_L",
+    "name": "supraoptic region of HTH (left)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_preoptic_region_of_HTH_L",
+    "name": "preoptic region of HTH (left)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_basilar_part_of_pons_L",
+    "name": "pontine nuclear group",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_midline_nuclear_complex_L",
+    "name": "midline nuclear complex (left)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_optic_radiation_L",
+    "name": "optic radiation",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_central_nuclear_group_R",
+    "name": "central nuclear group (right)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_anterior_nuclear_complex_of_thalamus_R",
+    "name": "anterior nuclear complex of thalamus (right)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_supraoptic_region_of_HTH_R",
+    "name": "supraoptic region of HTH (right)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_basilar_part_of_pons_R",
+    "name": "pontine nuclear group",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_midline_nuclear_complex_R",
+    "name": "midline nuclear complex (right)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_optic_radiation_R",
+    "name": "optic radiation",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_preoptic_region_of_HTH_R",
+    "name": "preoptic region of HTH (right)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_right_tibial_collateral_ligament",
+    "name": "Right tibial collateral ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_anterior_cruciate_ligament_of_knee_R",
+    "name": "Right anterior cruciate ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_posterior_cruciate_ligament_of_knee_R",
+    "name": "Right posterior cruciate ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_anterolateral_ligament_of_knee_R",
+    "name": "anterolateral ligament of knee",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_fibular_collateral_ligament_R",
+    "name": "Right fibular collateral ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_patellar_ligament_R",
+    "name": "Right patellar ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_articular_cartilage_of_knee_R",
+    "name": "Articular cartilage of distal epiphysis of right femur",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_anterolateral_ligament_of_knee_L",
+    "name": "anterolateral ligament of knee",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_fibular_collateral_ligament_L",
+    "name": "Left fibular collateral ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_patellar_ligament_L",
+    "name": "Left patellar ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_tibial_collateral_ligament",
+    "name": "Left tibial collateral ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_anterior_cruciate_ligament_of_knee_L",
+    "name": "Left anterior cruciate ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_posterior_cruciate_ligament_of_knee_L",
+    "name": "Left posterior cruciate ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_articular_cartilage_of_knee_L",
+    "name": "Articular cartilage of distal epiphysis of left femur",
+    "from": "skeletal",
+    "to": "joints"
   }
 ]

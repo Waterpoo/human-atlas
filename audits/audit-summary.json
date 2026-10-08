@@ -6,17 +6,18 @@
       "systems": {
         "arterial": 639,
         "cardiac": 23,
-        "connective": 42,
+        "connective": 36,
         "digestive": 108,
         "endocrine": 4,
         "integumentary": 5,
+        "joints": 6,
         "lymphatic": 3,
         "muscular": 413,
         "nervous": 146,
         "reproductive": 12,
-        "respiratory": 119,
+        "respiratory": 130,
         "sensory": 39,
-        "skeletal": 280,
+        "skeletal": 269,
         "urinary": 6,
         "venous": 395
       }
@@ -30,14 +31,15 @@
         "connective": 2,
         "digestive": 59,
         "integumentary": 17,
+        "joints": 14,
         "lymphatic": 16,
         "muscular": 14,
-        "nervous": 299,
+        "nervous": 316,
         "pregnancy": 8,
         "reproductive": 38,
         "respiratory": 70,
-        "sensory": 63,
-        "skeletal": 91,
+        "sensory": 46,
+        "skeletal": 77,
         "urinary": 87,
         "venous": 57
       }
@@ -56,9 +58,9 @@
         "muscular": 516,
         "nervous": 556,
         "reproductive": 14,
-        "respiratory": 39,
+        "respiratory": 50,
         "sensory": 20,
-        "skeletal": 277,
+        "skeletal": 266,
         "urinary": 6,
         "venous": 232
       }
@@ -66,6 +68,6 @@
   ],
   "total_parts": 5943,
   "geometry_passes": 5943,
-  "flagged_parts": 338,
+  "flagged_parts": 353,
   "clinical_or_anatomical_certification": false
 }

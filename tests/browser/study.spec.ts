@@ -114,6 +114,11 @@ test('Female model, clear selections, stage-free camera pan, and both models off
  for(const sex of ['male','female']){
  await page.getByLabel('Reference model',{exact:true}).selectOption(sex);await expect(page.getByText('Preparing the anatomy')).toBeHidden({timeout:90000});
  const atlas=await (await page.request.get(sex==='male'?'/models/atlas.json':'/models/atlas-female.json')).json();
+ if(sex==='female'){
+ for(const p of atlas.parts.filter((p:{id:string})=>p.id.startsWith('Allen_')))expect(p.system).toBe('nervous');
+ for(const p of atlas.parts.filter((p:{name:string})=>/articular cartilage|cruciate ligament|collateral ligament/i.test(p.name)))expect(p.system).toBe('joints');
+ expect(atlas.parts.find((p:{id:string})=>p.id==='VH_F_superior_rectal_vein').reviewFlags.length).toBeGreaterThan(0);
+ }
  if(sex==='male'){
  for(const baseId of ['FJ1409','FJ1410','FJ1411','FJ1439','FJ1440','FJ1504','FJ1532'])for(const suffix of ['', 'M'])expect(atlas.parts.find((p:{id:string})=>p.id===baseId+suffix)?.system).toBe('muscular');
  }

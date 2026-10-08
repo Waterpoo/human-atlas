@@ -4,7 +4,7 @@ All 5,943 components (2,234 original male; 888 female; 2,821 extended male) have
 
 73 confirmed system assignments were corrected; the full before/after list is system-corrections.json. Both sides of fibularis brevis, longus and tertius, tibialis anterior and posterior, subscapularis and levator scapulae move from Skeleton to Muscles. Brain ventricular spaces and choroid plexuses move to Nervous system; tensor fasciae latae to Muscles; wrist retinacula to Connective tissue; lacrimal bones to Skeleton; gingiva to Digestive/oral structures; papillary muscles to Heart; nine hepatic tissue segments to Digestive (the word hepatovenous describes their liver subdivision, not a vein mesh). Female cardiac vessels move to Arteries, palatine tonsils to Lymphatic, optic nerves/tracts to Nervous system, and quadriceps tendons to Connective tissue.
 
-Grouping policy: functional organ membership is retained for specialized eye, respiratory, reproductive and joint components. A ligament inside an eye or uterus is not automatically an error. Intracranial vessels stay in vascular systems; cardiac vessels belong to their vascular layers, while cardiac muscle belongs to Heart. Teeth and joint/costal cartilage are included with the supporting skeleton, so this layer is not a bones-only segmentation.
+Grouping policy: functional organ membership is retained for specialized eye, respiratory, reproductive and joint components. A ligament inside an eye or uterus is not automatically an error. Intracranial vessels stay in vascular systems; cardiac vessels belong to their vascular layers, while cardiac muscle belongs to Heart. Teeth and costal cartilage are grouped with the supporting skeleton, so this layer is not a bones-only segmentation. Separately modeled articular cartilage and knee ligaments are in Joints; nasal and laryngeal cartilage is displayed with Respiratory.
 
 The user approved installer creation with these limitations documented on 2026-10-07. The following source issues remain unresolved and prevent anatomical sign-off:
 
@@ -33,3 +33,25 @@ Six separately licensed kidney and inner-ear components are excluded from this d
 Unidentified source vascular nodes (?x.l, ?x.r and ????????) retain their exact source identifiers and are displayed as unidentified components. They are grouped using their source vascular parent (pterygoid-canal arteries and coronary sinus), rather than given invented anatomical names.
 
 The extended source lateral temporomandibular ligaments have side labels opposite their body-side coordinates. Their geometry and source identity are retained; individual and joint-group inspectors show a source laterality warning. These entries are not considered anatomically verified. Unidentified vascular components also show an identity warning.
+
+## Reference-backed classification review — 2026-10-08
+
+63 additional display assignments are corrected in classification-review.json, with individual IDs, names, before/after categories, reasons and reference URLs. These comprise 22 nasal/laryngeal cartilages moved to Respiratory, 14 female knee ligaments/articular cartilages and six original male syndesmosis/plantar ligament components moved to Joints, 17 female central neural/meningeal structures moved to Nervous, and four extended muscle/fascial components corrected (tensor fasciae latae and iliotibial tracts). Costal cartilage remains in Skeleton: skeletal-system cartilage is legitimate anatomy, not automatically an error.
+
+classification-audit.json lists every one of the 5,943 components, distinguishing reference-backed corrections from source assignments retained without independent certification. Identity conflicts are surfaced in the structure inspector, including the three known female vessel conflicts and Allen hemisphere convention. All geometry buffers are rechecked; no geometry is moved, mirrored or relabeled by these display-layer changes.
+
+The audit is a full catalogue consistency pass, not an independent manual anatomical assessment of every mesh. Textbooks and terminology establish tissue/system distinctions but cannot resolve an unidentified mesh or prove its exact shape/placement. Existing laterality, vascular identity and partial-coverage limitations therefore remain unresolved.
+
+References for the latest review:
+- skeleton: https://openstax.org/books/anatomy-and-physiology-2e/pages/7-1-divisions-of-the-skeletal-system
+- airway: https://openstax.org/books/anatomy-and-physiology/pages/22-1-organs-and-structures-of-the-respiratory-system
+- joint: https://openstax.org/books/anatomy-and-physiology-2e/pages/9-6-anatomy-of-selected-synovial-joints
+- syndesmosis: https://openstax.org/books/anatomy-and-physiology-2e/pages/9-2-fibrous-joints
+- neural: https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-5.pdf
+- meninges: https://openstax.org/books/anatomy-and-physiology/pages/13-3-circulation-and-the-central-nervous-system
+- fascia: https://pubmed.ncbi.nlm.nih.gov/30725782/
+- muscle: https://pubmed.ncbi.nlm.nih.gov/29500891/
+
+Additional source findings: five original male pairs have byte-identical geometry and identical labels (FJ1846/FJ2013, FJ1916/FJ2386, FJ1924/FJ2394, FJ2440/FJ2769, FJ2772/FJ3201). Their IDs are retained and flagged; a future alias/segmentation decision must preserve source concept membership. The two extended triradiate cartilages are developmental acetabular structures; their presence is not validated as a mature adult variant. Reference: https://pubmed.ncbi.nlm.nih.gov/29309383/.
+
+- FIPAT joint terminology (plantar ligaments and pelvic cartilage): https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-2.pdf

@@ -2,7 +2,7 @@
 import json,sys
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
-from anatomy_system_rules import expected_system
+from anatomy_system_rules import expected_system, source_review_flags
 changes=[]
 for file,sex in [('atlas.json','male'),('atlas-female.json','female')]:
  path=root/'public/models'/file;a=json.loads(path.read_text())
@@ -10,6 +10,10 @@ for file,sex in [('atlas.json','male'),('atlas-female.json','female')]:
   system=expected_system(p,sex)
   if p['system']!=system:
    changes.append({'model':sex,'id':p['id'],'name':p['name'],'from':p['system'],'to':system});p['system']=system
+  flags=source_review_flags(p)
+  if flags!=p.get('reviewFlags',[]):
+   if '--check' in sys.argv:raise AssertionError('Missing source review flags: '+p['id'])
+   p['reviewFlags']=flags
  if '--check' not in sys.argv:path.write_text(json.dumps(a,separators=(',',':')))
 if '--check' in sys.argv:
  assert not changes,changes

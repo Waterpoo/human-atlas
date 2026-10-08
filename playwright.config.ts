@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'tests/browser',workers:process.env.CI?1:undefined,timeout:180000,use:{trace:'retain-on-failure',screenshot:'only-on-failure',baseURL:'http://127.0.0.1:3016',launchOptions:{args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']}},webServer:{command:'npx vite preview --host 127.0.0.1 --port 3016',port:3016,reuseExistingServer:!process.env.CI}});

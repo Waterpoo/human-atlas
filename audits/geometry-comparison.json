@@ -1,0 +1,47 @@
+{
+  "componentsCompared": 5943,
+  "geometryChanged": 0,
+  "exactDuplicateGroups": [
+    {
+      "model": "male",
+      "sha256": "41630bb42fcc25cee92d6f37eafb68583dac70aaa1e581fb092db2c9d3702899",
+      "ids": [
+        "FJ1846",
+        "FJ2013"
+      ]
+    },
+    {
+      "model": "male",
+      "sha256": "1f7330275e70db6fe0176b752681e9c7c34423387d71617a9ce6ff60b75cde85",
+      "ids": [
+        "FJ1916",
+        "FJ2386"
+      ]
+    },
+    {
+      "model": "male",
+      "sha256": "6f045c47ff11e6ce55a897e1ce9fb717f782f0282a64fd55543c9745866a04b0",
+      "ids": [
+        "FJ1924",
+        "FJ2394"
+      ]
+    },
+    {
+      "model": "male",
+      "sha256": "76ce1ff57c2e5af3a0e4abf8b7a037ff6c207b07a26a74a1055c15a53db7696d",
+      "ids": [
+        "FJ2440",
+        "FJ2769"
+      ]
+    },
+    {
+      "model": "male",
+      "sha256": "ab4edc57830e4287b40ade88183f39aa68096d8b3413f020b18cdf64e0ef6d8f",
+      "ids": [
+        "FJ2772",
+        "FJ3201"
+      ]
+    }
+  ],
+  "anatomicalCertification": false
+}

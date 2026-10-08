@@ -4,6 +4,7 @@ Source and attribution: public/ATTRIBUTION.md. Geometry positions change mm/Z-up
 into meters/Y-up; normals become signed 16-bit and parts are grouped into chunks.
 """
 import sys,json,re,struct,math
+from anatomy_system_rules import expected_system, source_review_flags
 from pathlib import Path
 from array import array
 root=Path(__file__).resolve().parents[1]
@@ -37,9 +38,11 @@ for element in metadata['elements']:
     bounds=[[min(vertices[i::3]) for i in range(3)],[max(vertices[i::3]) for i in range(3)]]
     system=systems.get(element['id'],'connective')
     if isinstance(system,dict):system=system.get('system',system.get('category','connective'))
+    system=expected_system({'id':element['id'],'name':record.get('name',name),'system':system},'male')
     parts.append({'id':element['id'],'name':record.get('name',name),'conceptId':record.get('conceptId',element['conceptId']),'system':system,'chunk':chunk,'positions':po,'normals':no,'indices':io,'vertexCount':len(vertices)//3,'indexCount':len(indices),'bounds':bounds})
     total_triangles+=len(indices)//3
 (out/f'anatomy-{chunk}.bin').write_bytes(blob);chunks.append({'url':f'/models/anatomy-{chunk}.bin','bytes':len(blob)})
+for p in parts:p['reviewFlags']=source_review_flags(p)
 manifest={'version':'BodyParts3D 4.0','parts':parts,'chunks':chunks,'triangles':total_triangles,'concepts':[{k:v for k,v in c.items() if k in ['id','name','elements']} for c in metadata['concepts']]}
 (out/'atlas.json').write_text(json.dumps(manifest,separators=(',',':')))
 print(json.dumps({'parts':len(parts),'concepts':len(manifest['concepts']),'triangles':total_triangles,'bytes':sum(c['bytes'] for c in chunks),'chunks':len(chunks),'systems':sorted(set(p['system'] for p in parts))},indent=2))

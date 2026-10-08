@@ -1,0 +1,849 @@
+[
+  {
+    "model": "male",
+    "id": "FJ1252",
+    "name": "Gingiva of upper jaw",
+    "from": "skeletal",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ1253",
+    "name": "Gingiva of lower jaw",
+    "from": "skeletal",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ1438",
+    "name": "Right tensor fasciae latae",
+    "from": "connective",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1438M",
+    "name": "Left tensor fasciae latae",
+    "from": "connective",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1471",
+    "name": "Flexor retinaculum of right wrist",
+    "from": "sensory",
+    "to": "connective"
+  },
+  {
+    "model": "male",
+    "id": "FJ1471M",
+    "name": "Flexor retinaculum of left wrist",
+    "from": "sensory",
+    "to": "connective"
+  },
+  {
+    "model": "male",
+    "id": "FJ1730",
+    "name": "Third ventricle",
+    "from": "cardiac",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ1731",
+    "name": "Fourth ventricle",
+    "from": "cardiac",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ1752",
+    "name": "Interventricular foramen",
+    "from": "cardiac",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ1755",
+    "name": "Choroid plexus of cerebral hemisphere",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ1767",
+    "name": "Left lateral ventricle",
+    "from": "cardiac",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ1803",
+    "name": "Choroid plexus of cerebral hemisphere",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ1814",
+    "name": "Right lateral ventricle",
+    "from": "cardiac",
+    "to": "nervous"
+  },
+  {
+    "model": "male",
+    "id": "FJ2418",
+    "name": "Anterolateral head of lateral papillary muscle of left ventricle",
+    "from": "muscular",
+    "to": "cardiac"
+  },
+  {
+    "model": "male",
+    "id": "FJ2419",
+    "name": "Anterior papillary muscle of right ventricle",
+    "from": "muscular",
+    "to": "cardiac"
+  },
+  {
+    "model": "male",
+    "id": "FJ2429",
+    "name": "Lateral papillary muscle of left ventricle",
+    "from": "muscular",
+    "to": "cardiac"
+  },
+  {
+    "model": "male",
+    "id": "FJ2430",
+    "name": "Posterior papillary muscle of right ventricle",
+    "from": "muscular",
+    "to": "cardiac"
+  },
+  {
+    "model": "male",
+    "id": "FJ2437",
+    "name": "Septal papillary muscle of right ventricle",
+    "from": "muscular",
+    "to": "cardiac"
+  },
+  {
+    "model": "male",
+    "id": "FJ3265",
+    "name": "Left lacrimal bone",
+    "from": "sensory",
+    "to": "skeletal"
+  },
+  {
+    "model": "male",
+    "id": "FJ3371",
+    "name": "Right lacrimal bone",
+    "from": "sensory",
+    "to": "skeletal"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_right_optic_nerve",
+    "name": "Right optic nerve",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_optic_nerve",
+    "name": "Left optic nerve",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_optic_tract_L",
+    "name": "optic tract",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_optic_tract_R",
+    "name": "optic tract",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_tendon_of_quadriceps_femoris_L",
+    "name": "Tendon of left quadriceps femoris",
+    "from": "muscular",
+    "to": "connective"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_tendon_of_quadriceps_femoris_R",
+    "name": "Tendon of right quadriceps femoris",
+    "from": "muscular",
+    "to": "connective"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_palatine_tonsil_L",
+    "name": "left palatine tonsil",
+    "from": "digestive",
+    "to": "lymphatic"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_palatine_tonsil_R",
+    "name": "right palatine tonsil",
+    "from": "digestive",
+    "to": "lymphatic"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_anterior_descending_artery",
+    "name": "Anterior descending branch of left pulmonary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_circumflex_artery",
+    "name": "circumflex branch of left coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_diagonal_branch_of_left_anterior_descending_artery",
+    "name": "Diagonal branch of anterior descending branch of left coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_coronary_artery",
+    "name": "left coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_marginal_branch",
+    "name": "Left marginal artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_posterior_descending_branch_of_circumflex_branch_of_left_coronary_artery",
+    "name": "left posterior descending branch of circumflex branch of left coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_posterior_left_ventricular_branch",
+    "name": "Posterior ventricular branch of circumflex coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_right_coronary_artery",
+    "name": "right coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_right_marginal_artery",
+    "name": "marginal branch of right coronary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_pulmonary_artery_L",
+    "name": "left pulmonary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_pulmonary_trunk",
+    "name": "pulmonary trunk",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_pulmonary_artery_R",
+    "name": "right pulmonary artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_aortic_arch",
+    "name": "arch of aorta",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_ascending_aorta",
+    "name": "ascending aorta",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_descending_aorta_a",
+    "name": "descending aorta",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_descending_aorta_b",
+    "name": "descending aorta",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_common_carotid_artery_a",
+    "name": "left common carotid artery plus branches",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_common_carotid_artery_b",
+    "name": "left common carotid artery plus branches",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_subclavian_artery_a",
+    "name": "left subclavian artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_subclavian_artery_b",
+    "name": "left subclavian artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_brachiocephalic_artery_b",
+    "name": "brachiocephalic artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_brachiocephalic_artery_a",
+    "name": "brachiocephalic artery",
+    "from": "cardiac",
+    "to": "arterial"
+  },
+  {
+    "model": "male",
+    "id": "FJ1858",
+    "name": "Hepatovenous segment IX",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2409",
+    "name": "Hepatovenous segment VII",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2818",
+    "name": "Hepatovenous segment II",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2819",
+    "name": "Hepatovenous segment III",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2820",
+    "name": "Hepatovenous segment IV",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2821",
+    "name": "Hepatovenous segment V",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2822",
+    "name": "Hepatovenous segment VI",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2823",
+    "name": "Hepatovenous segment VIII",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ2824",
+    "name": "Hepatovenous segment VIII",
+    "from": "venous",
+    "to": "digestive"
+  },
+  {
+    "model": "male",
+    "id": "FJ1409",
+    "name": "Right fibularis brevis",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1409M",
+    "name": "Left fibularis brevis",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1410",
+    "name": "Right fibularis longus",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1410M",
+    "name": "Left fibularis longus",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1411",
+    "name": "Right fibularis tertius",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1411M",
+    "name": "Left fibularis tertius",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1439",
+    "name": "Right tibialis anterior",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1439M",
+    "name": "Left tibialis anterior",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1440",
+    "name": "Right tibialis posterior",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1440M",
+    "name": "Left tibialis posterior",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1504",
+    "name": "Right subscapularis",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1504M",
+    "name": "Left subscapularis",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1532",
+    "name": "Right levator scapulae",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1532M",
+    "name": "Left levator scapulae",
+    "from": "skeletal",
+    "to": "muscular"
+  },
+  {
+    "model": "male",
+    "id": "FJ1392",
+    "name": "Interosseous membrane of right leg",
+    "from": "connective",
+    "to": "joints"
+  },
+  {
+    "model": "male",
+    "id": "FJ1392M",
+    "name": "Interosseous membrane of left leg",
+    "from": "connective",
+    "to": "joints"
+  },
+  {
+    "model": "male",
+    "id": "FJ1424",
+    "name": "Right long plantar ligament",
+    "from": "connective",
+    "to": "joints"
+  },
+  {
+    "model": "male",
+    "id": "FJ1424M",
+    "name": "Left long plantar ligament",
+    "from": "connective",
+    "to": "joints"
+  },
+  {
+    "model": "male",
+    "id": "FJ1476",
+    "name": "Interosseous membrane of right forearm",
+    "from": "connective",
+    "to": "joints"
+  },
+  {
+    "model": "male",
+    "id": "FJ1476M",
+    "name": "Interosseous membrane of left forearm",
+    "from": "connective",
+    "to": "joints"
+  },
+  {
+    "model": "male",
+    "id": "FJ2440",
+    "name": "Cricoid cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2554",
+    "name": "Right major alar cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2555",
+    "name": "Left major alar cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2769",
+    "name": "Cricoid cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2773",
+    "name": "Left cuneiform cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2775",
+    "name": "Left arytenoid cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2776",
+    "name": "Left corniculate cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2792",
+    "name": "Right arytenoid cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2793",
+    "name": "Right corniculate cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2795",
+    "name": "Right cuneiform cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "male",
+    "id": "FJ2808",
+    "name": "Thyroid cartilage",
+    "from": "skeletal",
+    "to": "respiratory"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_dura_mater_right",
+    "name": "dura mater",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_dura_mater_left",
+    "name": "dura mater",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_optic_chiasm",
+    "name": "optic chiasma",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_central_nuclear_group_L",
+    "name": "central nuclear group (left)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_anterior_nuclear_complex_of_thalamus_L",
+    "name": "anterior nuclear complex of thalamus (left)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_supraoptic_region_of_HTH_L",
+    "name": "supraoptic region of HTH (left)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_preoptic_region_of_HTH_L",
+    "name": "preoptic region of HTH (left)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_basilar_part_of_pons_L",
+    "name": "pontine nuclear group",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_midline_nuclear_complex_L",
+    "name": "midline nuclear complex (left)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_optic_radiation_L",
+    "name": "optic radiation",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_central_nuclear_group_R",
+    "name": "central nuclear group (right)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_anterior_nuclear_complex_of_thalamus_R",
+    "name": "anterior nuclear complex of thalamus (right)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_supraoptic_region_of_HTH_R",
+    "name": "supraoptic region of HTH (right)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_basilar_part_of_pons_R",
+    "name": "pontine nuclear group",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_midline_nuclear_complex_R",
+    "name": "midline nuclear complex (right)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_optic_radiation_R",
+    "name": "optic radiation",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "Allen_preoptic_region_of_HTH_R",
+    "name": "preoptic region of HTH (right)",
+    "from": "sensory",
+    "to": "nervous"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_right_tibial_collateral_ligament",
+    "name": "Right tibial collateral ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_anterior_cruciate_ligament_of_knee_R",
+    "name": "Right anterior cruciate ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_posterior_cruciate_ligament_of_knee_R",
+    "name": "Right posterior cruciate ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_anterolateral_ligament_of_knee_R",
+    "name": "anterolateral ligament of knee",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_fibular_collateral_ligament_R",
+    "name": "Right fibular collateral ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_patellar_ligament_R",
+    "name": "Right patellar ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_articular_cartilage_of_knee_R",
+    "name": "Articular cartilage of distal epiphysis of right femur",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_anterolateral_ligament_of_knee_L",
+    "name": "anterolateral ligament of knee",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_fibular_collateral_ligament_L",
+    "name": "Left fibular collateral ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_patellar_ligament_L",
+    "name": "Left patellar ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_left_tibial_collateral_ligament",
+    "name": "Left tibial collateral ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_anterior_cruciate_ligament_of_knee_L",
+    "name": "Left anterior cruciate ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_posterior_cruciate_ligament_of_knee_L",
+    "name": "Left posterior cruciate ligament",
+    "from": "skeletal",
+    "to": "joints"
+  },
+  {
+    "model": "female",
+    "id": "VH_F_articular_cartilage_of_knee_L",
+    "name": "Articular cartilage of distal epiphysis of left femur",
+    "from": "skeletal",
+    "to": "joints"
+  }
+]

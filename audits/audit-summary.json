@@ -1,0 +1,73 @@
+{
+  "models": [
+    {
+      "model": "male",
+      "parts": 2234,
+      "systems": {
+        "arterial": 639,
+        "cardiac": 23,
+        "connective": 36,
+        "digestive": 108,
+        "endocrine": 4,
+        "integumentary": 5,
+        "joints": 6,
+        "lymphatic": 3,
+        "muscular": 413,
+        "nervous": 146,
+        "reproductive": 12,
+        "respiratory": 130,
+        "sensory": 39,
+        "skeletal": 269,
+        "urinary": 6,
+        "venous": 395
+      }
+    },
+    {
+      "model": "female",
+      "parts": 888,
+      "systems": {
+        "arterial": 53,
+        "cardiac": 14,
+        "connective": 2,
+        "digestive": 59,
+        "integumentary": 17,
+        "joints": 14,
+        "lymphatic": 16,
+        "muscular": 14,
+        "nervous": 316,
+        "pregnancy": 8,
+        "reproductive": 38,
+        "respiratory": 70,
+        "sensory": 46,
+        "skeletal": 77,
+        "urinary": 87,
+        "venous": 57
+      }
+    },
+    {
+      "model": "extended-male",
+      "parts": 2821,
+      "systems": {
+        "arterial": 427,
+        "cardiac": 17,
+        "connective": 153,
+        "digestive": 47,
+        "endocrine": 10,
+        "joints": 349,
+        "lymphatic": 158,
+        "muscular": 516,
+        "nervous": 556,
+        "reproductive": 14,
+        "respiratory": 50,
+        "sensory": 20,
+        "skeletal": 266,
+        "urinary": 6,
+        "venous": 232
+      }
+    }
+  ],
+  "total_parts": 5943,
+  "geometry_passes": 5943,
+  "flagged_parts": 353,
+  "clinical_or_anatomical_certification": false
+}

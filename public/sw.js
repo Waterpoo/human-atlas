@@ -1,0 +1,6 @@
+const PREFIX='halo-anatomy-';
+let cacheName;
+async function current(){if(!cacheName){const m=await fetch('/offline-manifest.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Offline manifest missing');return r.json();});cacheName=PREFIX+m.version;}return cacheName;}
+self.addEventListener('install',event=>event.waitUntil((async()=>{const m=await fetch('/offline-manifest.json',{cache:'no-store'}).then(r=>r.json());cacheName=PREFIX+m.version;const c=await caches.open(cacheName);await c.addAll(['/','/offline-manifest.json',...m.files]);await self.skipWaiting();})()));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{const name=await current();for(const key of await caches.keys())if(key.startsWith(PREFIX)&&key!==name)await caches.delete(key);await self.clients.claim();})()));
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET'||new URL(event.request.url).origin!==self.location.origin)return;event.respondWith((async()=>{const hit=await caches.match(event.request,{ignoreVary:true});if(hit)return hit;try{return await fetch(event.request);}catch{if(event.request.mode==='navigate'){const page=await caches.match('/');if(page)return page;}return new Response('Offline asset unavailable',{status:503});}})());});

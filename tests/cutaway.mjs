@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {Box3,Vector3} from 'three';
+import {cutawayPlane,firstUnclippedHit} from '../app/cutaway.ts';
+const box=new Box3(new Vector3(-1,-1,-1),new Vector3(1,1,1));
+assert.equal(cutawayPlane(box,new Vector3(0,0,-1),0),null);
+const front=cutawayPlane(box,new Vector3(0,0,-1),.5);
+assert.ok(front.distanceToPoint(new Vector3(0,0,.8))<0);
+assert.ok(front.distanceToPoint(new Vector3(0,0,-.8))>0);
+const back=cutawayPlane(box,new Vector3(0,0,1),.5);
+assert.ok(back.distanceToPoint(new Vector3(0,0,-.8))<0);
+const side=cutawayPlane(box,new Vector3(-1,0,0),.5);
+assert.ok(side.distanceToPoint(new Vector3(.8,0,0))<0);
+for(let corner=0;corner<8;corner++)assert.ok(cutawayPlane(box,new Vector3(.2,.1,-1),1).distanceToPoint(new Vector3(corner&1?1:-1,corner&2?1:-1,corner&4?1:-1))<0);
+const hidden={point:new Vector3(0,0,.8)},revealed={point:new Vector3(0,0,-.2)};
+assert.equal(firstUnclippedHit([hidden,revealed],front),revealed);
+assert.equal(firstUnclippedHit([hidden,revealed],null),hidden);
+assert.equal(firstUnclippedHit([hidden],front),undefined);
+console.log('Cutaway direction, endpoints and picking of revealed surfaces passed.');

@@ -1,0 +1,73 @@
+name: Test and package Halo Anatomy
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: halo-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run check && npm test && npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: Browser-test-failure
+          path: test-results
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Halo-Anatomy-Offline-Web
+          path: dist
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Viewer-previews
+          path: test-results/*-view.png
+  mac:
+    # User approved packaging with documented source limitations on 2026-10-07.
+    needs: test
+    strategy:
+      matrix:
+        include:
+          - runner: macos-14
+            arch: arm64
+          - runner: macos-14
+            arch: x64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      # Cross-build Intel and test through Rosetta on the GPU-capable ARM runner.
+      - if: matrix.arch == 'x64'
+        run: /usr/bin/arch -x86_64 /usr/bin/true
+      - run: npm ci
+      - run: npm run package:mac -- --${{ matrix.arch }}
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - timeout-minutes: 13
+        run: node tests/desktop-smoke.mjs "release/mac${{ matrix.arch == 'arm64' && '-arm64' || '' }}/Halo Anatomy.app/Contents/MacOS/Halo Anatomy"
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: Desktop-test-failure-${{ matrix.arch }}
+          path: desktop-failure.png
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Halo-Anatomy-Mac-${{ matrix.arch }}
+          path: release/*.dmg

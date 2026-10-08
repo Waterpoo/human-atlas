@@ -1,17 +1,17 @@
-# Human Atlas
+# Halo Anatomy
 
-An interactive 3D anatomy explorer built with React, Three.js, and shadcn/ui. Take the BodyParts3D adult male reference apart into **2,234 individually selectable meshes**, explore **15 anatomical systems**, and search **3,432 named concepts**.
-
-**[Explore the live demo](https://human-atlas-seven.vercel.app)**
+An offline anatomy explorer with three selectable references: BodyParts3D adult male (2,234 components), Human Reference Atlas female (888 components), and Z-Anatomy extended adult male (2,821 components). The extended reference includes 349 joint components and 4,375 searchable entries, with source definitions and Latin terms where supplied.
 
 ## Explore
 
-- Orbit, zoom, and select structures directly on the body.
-- Toggle individual systems or use skeleton and organ presets.
-- Move from assembled anatomy to a spaced inventory of every visible piece.
-- Search anatomical names and source identifiers.
-- Isolate a selected structure and read its details.
-- Use compact controls and detail panels on mobile.
+- Orbit, zoom, pan vertically or sideways, and select real modeled surfaces.
+- Toggle system layers and adjust each system's opacity independently.
+- In the extended reference, use Joints to inspect capsules, ligaments, labra, menisci and spinal discs. Search for a joint group to highlight its available components; select a joint capsule on the model to inspect its group.
+- Isolate structures or spread the available pieces into an anatomical inventory.
+- Change the background color and model contrast under View appearance. Appearance settings persist locally and survive view resets.
+- Use the optional muscle reference, saved notes, favorites and backup tools.
+
+This is a general anatomy explorer. A single reference does not cover every medical topic, every structure, every variation, or clinically verified pathology. The female dataset has partial skeleton and muscle coverage. Six separately licensed kidney/inner-ear meshes are excluded from the extended male reference; the original references remain available. Source identity/laterality uncertainties are documented in the included anatomy audit, with inspector warnings on identified extended-source conflicts.
 
 ## Run locally
 
@@ -22,43 +22,32 @@ npm ci
 npm run dev
 ```
 
-Open http://localhost:3016. To build the static site, run `npm run build`; the output is in `dist/`.
+Open http://localhost:3016. `npm run dev`, `npm test` and `npm run build` prepare the extended atlas from the pinned source files. `npm run build` produces the static offline app in `dist/`, including its model assets and service-worker manifest. `npm run package:mac -- --arm64` or `--x64` builds the corresponding Mac installer.
+
+Version 1.3.1 adds 63 reference-backed display classification corrections and a complete 5,943-entry consistency report. See [classification review](audits/classification-review.json). Costal cartilage stays with Skeleton; modeled joint cartilage is in Joints and airway cartilage in Respiratory. Source identity, maturity and laterality uncertainties remain explicitly flagged.
+
+Version 1.4 adds a saved, adjustable camera-facing Cutaway view. Depth 0% restores the complete visible model; 100% removes it. Rotate to change the cutting direction. Picking ignores clipped surfaces so revealed anatomy remains selectable. Cutaway uses the assembled model; separation, isolation and Reset restore whole surfaces. Open cut surfaces contain only the supplied source geometry and are not simulated tissue sections.
 
 ## Validate
 
 ```sh
 npm run check
-node scripts/validate-atlas.mjs
-node scripts/validate-interactions.mjs
+npm test
 npm run build
+npx playwright install --with-deps chromium
+npx playwright test
 ```
 
-Validation covers mesh buffers, names and concept membership, nonoverlapping exploded layouts at desktop and mobile aspect ratios, search and inspection contracts, and tap-versus-drag handling. Browser interaction checks have exercised selection, system controls, search, isolation, rotation, and 390×844, 320×568, and 844×390 layouts. Phone controls stay clear of the exploded inventory, and isolated structures fit the space above or beside the detail panel. Physical-device performance and real multitouch hardware have not been tested.
+Catalogue checks cover every binary buffer, compressed-file integrity, finite coordinates, original bounds, valid indices, nonempty normals, concept membership, reviewed muscle classification, layout and pointer handling. Browser tests exercise every available system in all three references, real joint-surface picking, grouping/isolation, opacity, appearance persistence/mobile controls and offline reloads. Packaged Mac smoke tests load all three references with external requests blocked. Intel target tests run through Rosetta; physical Intel hardware and real mobile multitouch hardware are not certified.
 
-## Anatomy data
+`python3 scripts/audit-anatomy.py` requires NumPy and regenerates the per-component report for all 5,943 components. Data integrity and successful rendering do not establish anatomical certification. See [audit notes](audits/README.md) and [Z-Anatomy import provenance](audits/z-anatomy-import.json).
 
-The current viewer uses **BodyParts3D 4.0**, an adult male reference anatomy, licensed **CC BY 4.0**. It does not represent every human structure or variation. Individual source meshes are distinct from named concepts, which may group multiple meshes. Descriptions distinguish general system context from individual organ explanations.
+## Data and licensing
 
-Geometry is simplified for browser performance while retaining every source mesh. The packaged model contains 2,288,268 triangles and downloads approximately 33 MB of compressed geometry. Full credits, source links, and adaptation details are in [ATTRIBUTION.md](public/ATTRIBUTION.md).
+Original app code is MIT. Anatomy assets and definitions have separate licenses; they are not relicensed as application code. BodyParts3D 4.0 and HRA female credits are in [ATTRIBUTION.md](public/ATTRIBUTION.md). Z-Anatomy-derived model assets remain CC BY-SA 4.0, with upstream BodyParts3D and contributor notices retained. Source definitions retain their supplied links and Wikipedia CC BY-SA 3.0 / GFDL attribution. See [upstream notices](public/Z-ANATOMY-LICENSE.txt).
 
-This is an educational explorer, not a diagnostic or surgical tool.
+The seven Z-Anatomy GLBs are pinned to nqwrc/3d-anatomy commit `8ca3b7421bcfbe88b85859eb1983d5cf79f21749`. The importer verifies their hashes, decodes Draco geometry, retains all node/world transforms, corrects triangle winding for reflected transforms, and packs individually indexed meshes. Simplification is bounded to 0.1% relative error per component. Atlas variants remain separate, avoiding unverified alignment between different references.
 
-## How it works
+## Rendering
 
-Geometry is merged into batches. Per-structure GPU textures control translation, visibility, and selection, while component geometry supports accurate picking. Exploded layouts pack only the visible pieces. Rendering updates when the scene changes; orbit controls remain responsive without thousands of separate draw calls.
-
-The optional WebMCP tools expose anatomy search and inspection in compatible browsers. The visible interface works without them.
-
-## Rebuilding geometry
-
-The repository includes browser-ready geometry. Rebuilding it is optional: obtain the official BodyParts3D OBJ archive and English metadata tables, prepare the joined concepts and display-system mappings, run `scripts/convert-anatomy.py`, then `node scripts/optimize-anatomy.mjs` and `node scripts/compress-models.mjs`. Simplification uses a 0.2% relative error limit per structure.
-
-## Deploy
-
-Import this repository into Vercel as a Vite project. The included `vercel.json` configures `npm ci`, `npm run build`, and the `dist` output directory. It can also be served by a static host.
-
-## License
-
-Original application code is released under the [MIT License](LICENSE). **The anatomy data has its own CC BY 4.0 license**; preserve the attribution when redistributing it. Third-party dependencies retain their respective licenses.
-
-Issues and pull requests are welcome. Please include reproduction steps and browser/device details for interaction problems.
+Geometry is merged into batches. Per-component GPU textures control visibility, translation and highlights; individual component geometry handles ray picking. The renderer redraws when the scene changes. Optional WebMCP tools provide catalogue search and inspection in supported browsers.

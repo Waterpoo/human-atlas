@@ -37,3 +37,11 @@ next-env.d.ts
 /outputs/
 /work/
 *.tsbuildinfo
+/release/
+/test-results/
+/playwright-report/
+
+# Reproducible Z-Anatomy conversion outputs
+/public/models/extended-*.bin*
+/public/models/atlas-extended.json
+/scripts/__pycache__/

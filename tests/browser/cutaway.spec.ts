@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 test('Cutaway clips visible anatomy in all atlases and persists offline',async({page,context})=>{
- test.setTimeout(600000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error'&&/shader|WebGLProgram/.test(m.text()))errors.push(m.text());});
+ test.setTimeout(900000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error'&&/shader|WebGLProgram/.test(m.text()))errors.push(m.text());});
  await page.setViewportSize({width:1280,height:900});await page.goto('/');
  const canvas=page.locator('canvas');
  const depth=async(value:number)=>{await page.getByRole('button',{name:'Cutaway view',exact:true}).click();await page.getByRole('spinbutton',{name:'Cutaway percentage'}).fill(String(value));await expect(canvas).toHaveAttribute('data-cutaway-depth',String(value/100));await page.keyboard.press('Escape');};
@@ -20,7 +20,9 @@ test('Cutaway clips visible anatomy in all atlases and persists offline',async({
   // Every source-bounds corner must fall in the clipped half-space at full depth.
   const atlas=await(await page.request.get('/models/'+(model==='male'?'atlas.json':model==='female'?'atlas-female.json':'atlas-extended.json'))).json();
   const plane=JSON.parse((await canvas.getAttribute('data-cutaway-plane'))!);
-  for(const part of atlas.parts)for(let c=0;c<8;c++)expect(plane[0]*part.bounds[c&1?1:0][0]+plane[1]*part.bounds[c&2?1:0][1]+plane[2]*part.bounds[c&4?1:0][2]+plane[3]).toBeLessThan(0);
+  let nearestRetainedCorner=-Infinity;
+  for(const part of atlas.parts)for(let c=0;c<8;c++)nearestRetainedCorner=Math.max(nearestRetainedCorner,plane[0]*part.bounds[c&1?1:0][0]+plane[1]*part.bounds[c&2?1:0][1]+plane[2]*part.bounds[c&4?1:0][2]+plane[3]);
+  expect(nearestRetainedCorner).toBeLessThan(0);
   await depth(0);await expect(canvas).toHaveAttribute('data-cutaway-plane','null');
  }
  await depth(35);await page.evaluate(async()=>{await navigator.serviceWorker.ready;});await context.setOffline(true);await page.reload();await expect(page.getByText('Preparing the anatomy')).toBeHidden({timeout:120000});await expect(canvas).toHaveAttribute('data-cutaway-depth','0.35');

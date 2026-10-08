@@ -24,7 +24,7 @@ export interface Atlas {version:string;sex?:'male'|'female';source?:string;scope
 export type View = 'three-quarter'|'front'|'back'|'side';
 export const DEFAULT_OPACITY:Partial<Record<SystemId,number>>={integumentary:.1};
 export function systemOpacity(state:SceneState,id:SystemId){return state.opacity?.[id]??DEFAULT_OPACITY[id]??1;}
-export interface SceneState {background?:string;contrast?:number;opacity?:Partial<Record<SystemId,number>>;navigation?:'orbit'|'pan';cameraHeight?:number;inspectorOpen?:boolean;explode:number;visible:SystemId[];selected:string[];isolate:boolean;view:View;rotate:boolean;reset:number}
+export interface SceneState {cutaway?:number;background?:string;contrast?:number;opacity?:Partial<Record<SystemId,number>>;navigation?:'orbit'|'pan';cameraHeight?:number;inspectorOpen?:boolean;explode:number;visible:SystemId[];selected:string[];isolate:boolean;view:View;rotate:boolean;reset:number}
 export const DEFAULT_VISIBLE:SystemId[] = ['cardiac','sensory','skeletal','muscular','arterial','venous','nervous','respiratory','digestive','urinary','lymphatic','endocrine','reproductive','connective','joints'];
 export const EXPLANATIONS:Record<string,string> = {
  'heart':'A muscular pump in the chest. Its right side sends blood to the lungs; its left side sends blood through the systemic circulation.',

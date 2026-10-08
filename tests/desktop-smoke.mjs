@@ -29,6 +29,12 @@ try{
  await page.getByRole('button',{name:'Dark background',exact:true}).click();
  await page.waitForFunction(()=>document.querySelector('canvas').dataset.background==='#202936');
  await page.keyboard.press('Escape');
+ await page.getByRole('button',{name:'Cutaway view',exact:true}).click();
+ await page.getByRole('spinbutton',{name:'Cutaway percentage'}).fill('40');
+ await page.waitForFunction(()=>document.querySelector('canvas').dataset.cutawayDepth==='0.4');
+ await page.getByRole('button',{name:'Restore whole model',exact:true}).click();
+ await page.waitForFunction(()=>document.querySelector('canvas').dataset.cutawayDepth==='0');
+ await page.keyboard.press('Escape');
  await page.getByLabel('Reference model',{exact:true}).selectOption('male');
  await page.getByText('Preparing the anatomy').waitFor({state:'hidden',timeout:90000});
  const opacity=page.getByRole('slider',{name:'Muscles opacity',exact:true});

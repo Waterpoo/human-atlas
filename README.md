@@ -26,6 +26,8 @@ Open http://localhost:3016. `npm run dev`, `npm test` and `npm run build` prepar
 
 Version 1.3.1 adds 63 reference-backed display classification corrections and a complete 5,943-entry consistency report. See [classification review](audits/classification-review.json). Costal cartilage stays with Skeleton; modeled joint cartilage is in Joints and airway cartilage in Respiratory. Source identity, maturity and laterality uncertainties remain explicitly flagged.
 
+Version 1.4 adds a saved, adjustable camera-facing Cutaway view. Depth 0% restores the complete visible model; 100% removes it. Rotate to change the cutting direction. Picking ignores clipped surfaces so revealed anatomy remains selectable. Cutaway uses the assembled model; separation, isolation and Reset restore whole surfaces. Open cut surfaces contain only the supplied source geometry and are not simulated tissue sections.
+
 ## Validate
 
 ```sh
